@@ -169,6 +169,9 @@
   --line-height-heading3: 125%;
   --line-height-heading2: 125%;
   --line-height-heading1: 125%;
+
+  /* Spacing */
+  --appbar-height: 3.75rem;
 }
 
 @layer base {

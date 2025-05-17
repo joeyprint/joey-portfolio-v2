@@ -12,7 +12,7 @@ type ButtonProps = HTMLAttributes<"button"> & {
 const { className, variant, color, ...restProps } = Astro.props as ButtonProps;
 
 const buttonVariants = cva(
-  "joey_button inline-flex items-center justify-center whitespace-nowrap rounded-lg cursor-pointer transition-all duration-300",
+  "joey_button inline-flex items-center justify-center whitespace-nowrap rounded-lg cursor-pointer transition-all duration-300 gap-1",
   {
     variants: {
       variant: {
@@ -21,7 +21,7 @@ const buttonVariants = cva(
         text: "",
       },
       size: {
-        medium: "h-9 px-4 py-2 has-[>svg]:px-3",
+        medium: "px-3 py-2",
       },
       color: {
         primary: "",
