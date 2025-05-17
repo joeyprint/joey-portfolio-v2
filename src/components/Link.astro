@@ -1,0 +1,31 @@
+---
+import { type HTMLAttributes } from "astro/types";
+import { cn } from "@/lib/utils";
+import { cva } from "class-variance-authority";
+
+type LinkProps = HTMLAttributes<"a"> & {
+  color?: "primary" | "inherit";
+  className?: string;
+};
+
+const { color, className, ...restProps } = Astro.props as LinkProps;
+
+const linkVariants = cva(
+  "joey_body1 hover:underline cursor-pointer transition-all duration-300",
+  {
+    variants: {
+      color: {
+        primary: "text-primary",
+        inherit: "text-typography-primary",
+      },
+    },
+    defaultVariants: {
+      color: "primary",
+    },
+  }
+);
+---
+
+<a class={cn(linkVariants({ color, className }))} {...restProps}>
+  <slot />
+</a>
