@@ -1,9 +1,9 @@
 ---
 import { type HTMLAttributes } from "astro/types";
 
-type SvgIconProps = HTMLAttributes<"svg">;
+interface Props extends HTMLAttributes<"svg"> {}
 
-const { ...restProps } = Astro.props as SvgIconProps;
+const { ...restProps } = Astro.props;
 ---
 
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" {...restProps}>

@@ -3,12 +3,12 @@ import { type HTMLAttributes } from "astro/types";
 import { cn } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 
-type LinkProps = HTMLAttributes<"a"> & {
+interface Props extends HTMLAttributes<"a"> {
   color?: "primary" | "inherit";
   className?: string;
-};
+}
 
-const { color, className, ...restProps } = Astro.props as LinkProps;
+const { color, className, ...restProps } = Astro.props;
 
 const linkVariants = cva(
   "joey_body1 hover:underline cursor-pointer transition-all duration-300",
