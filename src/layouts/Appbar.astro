@@ -2,11 +2,22 @@
 import Button from "@/components/Button.astro";
 import MediumIcon from "@/components/icons/MediumIcon.astro";
 import Link from "@/components/Link.astro";
-
-const handleDownloadResume = () => {
-  console.log("download resume");
-};
 ---
+
+<script>
+  const downloadResumeButton = document.getElementById("hero-download-resume");
+
+  const handleDownloadResume = () => {
+    window.open(
+      "https://drive.google.com/file/d/1b3PzztWTgOYjBwmabFryQ7j-kS0SVZiX/view?usp=sharing",
+      "_blank"
+    );
+  };
+
+  downloadResumeButton?.addEventListener("click", () => {
+    handleDownloadResume();
+  });
+</script>
 
 <div id="joey-appbar" class={`fixed w-full h-(--appbar-height) z-50`}>
   <div class="container mx-auto my-auto">
@@ -23,7 +34,7 @@ const handleDownloadResume = () => {
           <span><MediumIcon /></span>
           Medium
         </Link>
-        <Button variant="outlined" onclick={handleDownloadResume}>
+        <Button id="hero-download-resume" variant="outlined">
           Get my resume
         </Button>
       </div>
