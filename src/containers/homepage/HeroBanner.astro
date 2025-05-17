@@ -1,6 +1,9 @@
 ---
-import Button from "@/components/Button.astro";
 import { differenceInYears } from "date-fns";
+
+import Button from "@/components/Button.astro";
+import GitHubIcon from "@/components/icons/GitHubIcon.astro";
+import LinkedInIcon from "@/components/icons/LinkedInIcon.astro";
 
 const startWorkingDate = new Date("12/15/2019");
 const currentDate = new Date();
@@ -26,8 +29,11 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
       we tell. The web and applications mustn't be useless for an organization.
     </p>
     <div class="flex gap-4">
-      <Button>Linked In</Button>
-      <Button variant="outlined">Github</Button>
+      <Button><span slot="start-icon"><LinkedInIcon /></span>Linked In</Button>
+      <Button variant="outlined">
+        <span slot="start-icon"><GitHubIcon /></span>
+        Github
+      </Button>
     </div>
   </div>
 </div>
