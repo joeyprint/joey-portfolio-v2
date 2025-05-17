@@ -13,15 +13,28 @@ import Button from "../components/Button.astro";
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro + TailwindCSS</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>Wasin Wachirapusitanun | Portfolio</title>
   </head>
 
   <body>
-    <div class="grid place-items-center h-screen content-center">
-      <Button>Tailwind Button in Astro!</Button>
-      <a href="/markdown-page" class="p-4 underline"
-        >Markdown is also supported...</a
-      >
+    <div class="flex justify-center aligns-center gap-2">
+      <Button variant={"contained"} onclick={() => console.log("clicked")}>
+        Click Me!
+      </Button>
+      <Button variant={"outlined"} onclick={() => console.log("clicked")}>
+        Click Me!
+      </Button>
+      <Button variant={"text"} onclick={() => console.log("clicked")}>
+        Click Me!
+      </Button>
     </div>
   </body>
 </html>
