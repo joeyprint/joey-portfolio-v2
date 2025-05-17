@@ -11,6 +11,25 @@ const currentDate = new Date();
 const diffYear = differenceInYears(currentDate, startWorkingDate);
 ---
 
+<script>
+  const githubButton = document.getElementById("hero-github-button");
+  const linkedInButton = document.getElementById("hero-linkedin-button");
+
+  const goToGitHub = () => {
+    window.open("https://github.com/joeyprint", "_blank");
+  };
+
+  const goToLinkedIn = () => {
+    window.open("https://www.linkedin.com/in/joeywasin/", "_blank");
+  };
+  githubButton?.addEventListener("click", () => {
+    goToGitHub();
+  });
+
+  linkedInButton?.addEventListener("click", () => {
+    goToLinkedIn();
+  });
+</script>
 <div
   class="container mx-auto mt-12 flex flex-col md:flex-row justify-center aligns-start gap-8"
 >
@@ -29,8 +48,10 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
       we tell. The web and applications mustn't be useless for an organization.
     </p>
     <div class="flex gap-4">
-      <Button><span slot="start-icon"><LinkedInIcon /></span>Linked In</Button>
-      <Button variant="outlined">
+      <Button id="hero-linkedin-button"
+        ><span slot="start-icon"><LinkedInIcon /></span>Linked In</Button
+      >
+      <Button id="hero-github-button" variant="outlined">
         <span slot="start-icon"><GitHubIcon /></span>
         Github
       </Button>
