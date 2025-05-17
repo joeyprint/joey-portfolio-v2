@@ -1,40 +1,9 @@
 ---
-import "../styles/global.css";
-// Component Imports
-import Button from "../components/Button.astro";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
+import BaseLayout from "@/layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
-
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <title>Wasin Wachirapusitanun | Portfolio</title>
-  </head>
-
-  <body>
-    <div class="flex justify-center aligns-center gap-2">
-      <Button variant={"contained"} onclick={() => console.log("clicked")}>
-        Click Me!
-      </Button>
-      <Button variant={"outlined"} onclick={() => console.log("clicked")}>
-        Click Me!
-      </Button>
-      <Button variant={"text"} onclick={() => console.log("clicked")}>
-        Click Me!
-      </Button>
-    </div>
-  </body>
-</html>
+<BaseLayout content={{ title: "Wasin Wachirapusitanun | Portfolio" }}>
+  <div class="flex justify-center aligns-center gap-2">
+    Hello, I'm Wasin Wachirapusitanun
+  </div>
+</BaseLayout>
