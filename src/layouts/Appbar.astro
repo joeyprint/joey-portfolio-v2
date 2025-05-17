@@ -1,5 +1,6 @@
 ---
 import Button from "@/components/Button.astro";
+import MediumIcon from "@/components/icons/mediumIcon.astro";
 import Link from "@/components/Link.astro";
 
 const handleDownloadResume = () => {
@@ -10,18 +11,16 @@ const handleDownloadResume = () => {
 <div id="joey-appbar" class={`fixed w-full h-(--appbar-height) z-50`}>
   <div class="container mx-auto my-auto">
     <div class="flex justify-between items-center py-2.5">
-      <img
-        src="/assets/logo/wasin-full-logo-light.svg"
-        alt="Joey Logo"
-        class="logo"
-      />
+      <img src="/assets/logo/wasin-full-logo-light.svg" alt="Joey Logo" />
       <div class="flex justify-center items-center gap-4">
         <Link color="inherit" href="#projects">Projects</Link>
         <Link
           color="inherit"
           href="https://medium.com/@joeywasin"
           target="_blank"
+          className="inline-flex items-center gap-1"
         >
+          <span><MediumIcon /></span>
           Medium
         </Link>
         <Button variant="outlined" onclick={handleDownloadResume}>
