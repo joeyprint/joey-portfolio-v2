@@ -6,7 +6,9 @@ import Link from "@/components/Link.astro";
 ---
 
 <script>
-  const downloadResumeButton = document.getElementById("hero-download-resume");
+  const downloadResumeButton = document.getElementById(
+    "appbar-download-resume"
+  );
 
   const handleDownloadResume = () => {
     window.open(
@@ -35,7 +37,7 @@ import Link from "@/components/Link.astro";
           <span><MediumIcon /></span>
           Medium
         </Link>
-        <Button id="hero-download-resume" variant="outlined">
+        <Button id="appbar-download-resume" variant="outlined">
           <span slot="start-icon"><DownloadOutlinedIcon /></span>
           Get my resume
         </Button>
