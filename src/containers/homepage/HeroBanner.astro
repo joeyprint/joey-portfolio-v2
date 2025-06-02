@@ -4,6 +4,7 @@ import { differenceInYears } from 'date-fns';
 import Button from '@/components/Button.astro';
 import GitHubIcon from '@/components/icons/GitHubIcon.astro';
 import LinkedInIcon from '@/components/icons/LinkedInIcon.astro';
+import Container from '@/components/Container.astro';
 
 const startWorkingDate = new Date('12/15/2019');
 const currentDate = new Date();
@@ -31,9 +32,7 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
 	});
 </script>
 
-<div
-	class="aligns-start container mx-auto mt-12 flex flex-col justify-center gap-8 px-4 sm:px-0 lg:flex-row"
->
+<Container className="aligns-start mx-auto mt-12 flex flex-col justify-center gap-8 lg:flex-row">
 	<img
 		src="/assets/profile/joey_ai.png"
 		alt="Joey AI profile image"
@@ -59,4 +58,4 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
 			</Button>
 		</div>
 	</div>
-</div>
+</Container>

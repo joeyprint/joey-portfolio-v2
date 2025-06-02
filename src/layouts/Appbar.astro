@@ -1,5 +1,6 @@
 ---
 import Button from '@/components/Button.astro';
+import Container from '@/components/Container.astro';
 import DownloadOutlinedIcon from '@/components/icons/DownloadOutlinedIcon.astro';
 import MediumIcon from '@/components/icons/MediumIcon.astro';
 import Link from '@/components/Link.astro';
@@ -21,7 +22,7 @@ import Link from '@/components/Link.astro';
 </script>
 
 <div id="joey-appbar" class={`fixed w-full h-(--appbar-height) z-50`}>
-	<div class="container mx-auto my-auto">
+	<Container className="my-auto">
 		<div class="flex items-center justify-between py-2.5">
 			<img src="/assets/logo/wasin-full-logo-light.svg" alt="Joey Logo" />
 			<div class="flex items-center justify-center gap-4">
@@ -41,5 +42,5 @@ import Link from '@/components/Link.astro';
 				</Button>
 			</div>
 		</div>
-	</div>
+	</Container>
 </div>
