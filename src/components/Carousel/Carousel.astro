@@ -13,15 +13,14 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
 <script>
 	document.addEventListener('DOMContentLoaded', () => {
 		const swiperEl = document.querySelector('swiper-container');
 
 		const swiperParams = {
 			spaceBetween: 24,
-			centeredSlides: true,
-			centeredSlidesBounds: true,
+			// centeredSlides: true,
+			// centeredSlidesBounds: true,
 			loop: true,
 			slidesToScroll: 1,
 			breakpoints: {
