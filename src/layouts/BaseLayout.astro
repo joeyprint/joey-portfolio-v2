@@ -28,6 +28,8 @@ const { content } = Astro.props;
 	<body>
 		<Appbar />
 		<Toolbar />
-		<slot />
+		<div class="py-6 md:py-12">
+			<slot />
+		</div>
 	</body>
 </html>

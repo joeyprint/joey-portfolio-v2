@@ -21,7 +21,10 @@ import Link from '@/components/Link.astro';
 	});
 </script>
 
-<div id="joey-appbar" class={`fixed w-full h-(--appbar-height) z-50`}>
+<div
+	id="joey-appbar"
+	class={`fixed w-full h-(--appbar-height) z-50 bg-[hsla(0,0%,94%,0.9)] backdrop-blur-[5px]`}
+>
 	<Container className="my-auto">
 		<div class="flex items-center justify-between py-2.5">
 			<img src="/assets/logo/wasin-full-logo-light.svg" alt="Joey Logo" />
