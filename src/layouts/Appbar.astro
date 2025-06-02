@@ -26,12 +26,12 @@ import Link from '@/components/Link.astro';
 		<div class="flex items-center justify-between py-2.5">
 			<img src="/assets/logo/wasin-full-logo-light.svg" alt="Joey Logo" />
 			<div class="flex items-center justify-center gap-4">
-				<Link color="inherit" href="#projects">Projects</Link>
+				<Link className={'hidden sm:inline-flex'} color="inherit" href="#projects">Projects</Link>
 				<Link
 					color="inherit"
 					href="https://medium.com/@joeywasin"
 					target="_blank"
-					className="inline-flex items-center gap-1"
+					className={'hidden items-center gap-1 sm:inline-flex'}
 				>
 					<span><MediumIcon /></span>
 					Medium
