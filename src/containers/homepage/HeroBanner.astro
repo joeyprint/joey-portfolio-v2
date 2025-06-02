@@ -1,60 +1,62 @@
 ---
-import { differenceInYears } from "date-fns";
+import { differenceInYears } from 'date-fns';
 
-import Button from "@/components/Button.astro";
-import GitHubIcon from "@/components/icons/GitHubIcon.astro";
-import LinkedInIcon from "@/components/icons/LinkedInIcon.astro";
+import Button from '@/components/Button.astro';
+import GitHubIcon from '@/components/icons/GitHubIcon.astro';
+import LinkedInIcon from '@/components/icons/LinkedInIcon.astro';
 
-const startWorkingDate = new Date("12/15/2019");
+const startWorkingDate = new Date('12/15/2019');
 const currentDate = new Date();
 
 const diffYear = differenceInYears(currentDate, startWorkingDate);
 ---
 
 <script>
-  const githubButton = document.getElementById("hero-github-button");
-  const linkedInButton = document.getElementById("hero-linkedin-button");
+	const githubButton = document.getElementById('hero-github-button');
+	const linkedInButton = document.getElementById('hero-linkedin-button');
 
-  const goToGitHub = () => {
-    window.open("https://github.com/joeyprint", "_blank");
-  };
+	const goToGitHub = () => {
+		window.open('https://github.com/joeyprint', '_blank');
+	};
 
-  const goToLinkedIn = () => {
-    window.open("https://www.linkedin.com/in/joeywasin/", "_blank");
-  };
-  githubButton?.addEventListener("click", () => {
-    goToGitHub();
-  });
+	const goToLinkedIn = () => {
+		window.open('https://www.linkedin.com/in/joeywasin/', '_blank');
+	};
+	githubButton?.addEventListener('click', () => {
+		goToGitHub();
+	});
 
-  linkedInButton?.addEventListener("click", () => {
-    goToLinkedIn();
-  });
+	linkedInButton?.addEventListener('click', () => {
+		goToLinkedIn();
+	});
 </script>
+
 <div
-  class="container px-4 sm:px-0 mx-auto mt-12 flex flex-col lg:flex-row justify-center aligns-start gap-8"
+	class="aligns-start container mx-auto mt-12 flex flex-col justify-center gap-8 px-4 sm:px-0 lg:flex-row"
 >
-  <img
-    src="/assets/profile/joey_ai.png"
-    alt="Joey AI profile image"
-    class="flex-1 shrink-0 rounded-xl aspect-(--aspect-ratio-16-9) object-cover"
-  />
-  <div class="flex flex-col align-start flex-1 shrink-0 gap-6">
-    <h1 class="joey_subtitle1">Hi, I'm Joey Wasin</h1>
-    <h2 class="joey_heading1 text-primary">Freelance | Software Engineer</h2>
-    <p class="joey_body1">
-      Product design and web development. I have been working in the development
-      field for {diffYear} years so far. I specialize in front-end development and
-      UX/UI design. We live by these words in everything we develop and every story
-      we tell. The web and applications mustn't be useless for an organization.
-    </p>
-    <div class="flex gap-4">
-      <Button id="hero-linkedin-button"
-        ><span slot="start-icon"><LinkedInIcon /></span>Linked In</Button
-      >
-      <Button id="hero-github-button" variant="outlined">
-        <span slot="start-icon"><GitHubIcon /></span>
-        Github
-      </Button>
-    </div>
-  </div>
+	<img
+		src="/assets/profile/joey_ai.png"
+		alt="Joey AI profile image"
+		class="aspect-(--aspect-ratio-16-9) flex-1 shrink-0 rounded-xl object-cover"
+	/>
+	<div class="align-start flex flex-1 shrink-0 flex-col gap-6">
+		<h1 class="joey_subtitle1">Hi, I'm Joey Wasin</h1>
+		<h2 class="joey_heading1 text-primary">Freelance | Software Engineer</h2>
+		<p class="joey_body1">
+			Product design and web development. I have been working in the development field for {
+				diffYear
+			} years so far. I specialize in front-end development and UX/UI design. We live by these words
+			in everything we develop and every story we tell. The web and applications mustn't be useless for
+			an organization.
+		</p>
+		<div class="flex gap-4">
+			<Button id="hero-linkedin-button"
+				><span slot="start-icon"><LinkedInIcon /></span>Linked In</Button
+			>
+			<Button id="hero-github-button" variant="outlined">
+				<span slot="start-icon"><GitHubIcon /></span>
+				Github
+			</Button>
+		</div>
+	</div>
 </div>

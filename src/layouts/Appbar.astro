@@ -1,47 +1,45 @@
 ---
-import Button from "@/components/Button.astro";
-import DownloadOutlinedIcon from "@/components/icons/DownloadOutlinedIcon.astro";
-import MediumIcon from "@/components/icons/MediumIcon.astro";
-import Link from "@/components/Link.astro";
+import Button from '@/components/Button.astro';
+import DownloadOutlinedIcon from '@/components/icons/DownloadOutlinedIcon.astro';
+import MediumIcon from '@/components/icons/MediumIcon.astro';
+import Link from '@/components/Link.astro';
 ---
 
 <script>
-  const downloadResumeButton = document.getElementById(
-    "appbar-download-resume"
-  );
+	const downloadResumeButton = document.getElementById('appbar-download-resume');
 
-  const handleDownloadResume = () => {
-    window.open(
-      "https://drive.google.com/file/d/1b3PzztWTgOYjBwmabFryQ7j-kS0SVZiX/view?usp=sharing",
-      "_blank"
-    );
-  };
+	const handleDownloadResume = () => {
+		window.open(
+			'https://drive.google.com/file/d/1b3PzztWTgOYjBwmabFryQ7j-kS0SVZiX/view?usp=sharing',
+			'_blank'
+		);
+	};
 
-  downloadResumeButton?.addEventListener("click", () => {
-    handleDownloadResume();
-  });
+	downloadResumeButton?.addEventListener('click', () => {
+		handleDownloadResume();
+	});
 </script>
 
 <div id="joey-appbar" class={`fixed w-full h-(--appbar-height) z-50`}>
-  <div class="container mx-auto my-auto">
-    <div class="flex justify-between items-center py-2.5">
-      <img src="/assets/logo/wasin-full-logo-light.svg" alt="Joey Logo" />
-      <div class="flex justify-center items-center gap-4">
-        <Link color="inherit" href="#projects">Projects</Link>
-        <Link
-          color="inherit"
-          href="https://medium.com/@joeywasin"
-          target="_blank"
-          className="inline-flex items-center gap-1"
-        >
-          <span><MediumIcon /></span>
-          Medium
-        </Link>
-        <Button id="appbar-download-resume" variant="outlined">
-          <span slot="start-icon"><DownloadOutlinedIcon /></span>
-          Get my resume
-        </Button>
-      </div>
-    </div>
-  </div>
+	<div class="container mx-auto my-auto">
+		<div class="flex items-center justify-between py-2.5">
+			<img src="/assets/logo/wasin-full-logo-light.svg" alt="Joey Logo" />
+			<div class="flex items-center justify-center gap-4">
+				<Link color="inherit" href="#projects">Projects</Link>
+				<Link
+					color="inherit"
+					href="https://medium.com/@joeywasin"
+					target="_blank"
+					className="inline-flex items-center gap-1"
+				>
+					<span><MediumIcon /></span>
+					Medium
+				</Link>
+				<Button id="appbar-download-resume" variant="outlined">
+					<span slot="start-icon"><DownloadOutlinedIcon /></span>
+					Get my resume
+				</Button>
+			</div>
+		</div>
+	</div>
 </div>
