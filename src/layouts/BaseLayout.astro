@@ -1,6 +1,7 @@
 ---
-import Appbar from './Appbar.astro';
 import Toolbar from '@/components/Toolbar.astro';
+import Appbar from './Appbar.astro';
+import Footer from './Footer.astro';
 
 import '../styles/global.css';
 
@@ -28,8 +29,9 @@ const { content } = Astro.props;
 	<body>
 		<Appbar />
 		<Toolbar />
-		<div class="py-6 md:py-12">
+		<div class="min-h-full py-6 md:py-12">
 			<slot />
 		</div>
+		<Footer />
 	</body>
 </html>
