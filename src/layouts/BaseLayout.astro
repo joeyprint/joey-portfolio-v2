@@ -1,0 +1,37 @@
+---
+import Toolbar from '@/components/Toolbar.astro';
+import Appbar from './Appbar.astro';
+import Footer from './Footer.astro';
+
+import '../styles/global.css';
+
+const { content } = Astro.props;
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600&display=swap"
+			rel="stylesheet"
+		/>
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+
+		<title>{content.title}</title>
+	</head>
+	<body>
+		<Appbar />
+		<Toolbar />
+		<div class="min-h-full py-6 md:py-12">
+			<slot />
+		</div>
+		<Footer />
+	</body>
+</html>

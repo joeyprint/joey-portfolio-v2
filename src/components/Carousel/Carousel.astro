@@ -1,0 +1,52 @@
+---
+// Swiper Document - https://swiperjs.com/element#installation
+import 'swiper/css';
+import 'swiper/css/bundle';
+import 'swiper/css/autoplay';
+import 'swiper/css/controller';
+import { cn } from '@/lib/utils';
+
+interface Props {
+	className?: string;
+}
+
+const { className } = Astro.props;
+---
+
+<script>
+	document.addEventListener('DOMContentLoaded', () => {
+		const swiperEl = document.querySelector('swiper-container');
+
+		const swiperParams = {
+			spaceBetween: 24,
+			// centeredSlides: true,
+			// centeredSlidesBounds: true,
+			loop: true,
+			slidesToScroll: 1,
+			breakpoints: {
+				0: {
+					slidesPerView: 1.5
+				},
+				640: {
+					slidesPerView: 2.5
+				},
+				768: {
+					slidesPerView: 3.5
+				},
+				1200: {
+					slidesPerView: 5
+				}
+			}
+		};
+
+		// now we need to assign all parameters to Swiper element
+		if (swiperEl) {
+			Object.assign(swiperEl, swiperParams);
+			swiperEl.initialize();
+		}
+	});
+</script>
+
+<swiper-container class={cn('max-w-[1200px] w-full', className)}>
+	<slot />
+</swiper-container>

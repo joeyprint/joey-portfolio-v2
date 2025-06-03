@@ -1,0 +1,32 @@
+---
+import Carousel from '@/components/Carousel/Carousel.astro';
+import CompanyBox from '@/components/CompanyBox.astro';
+import Container from '@/components/Container.astro';
+
+const COMPANIES = [
+	{ logoUrl: 'assets/company-logo/odds.png', name: 'ODDS Teams' },
+	{ logoUrl: 'assets/company-logo/set.png', name: 'The Stock Exchange Thailand' },
+	{ logoUrl: 'assets/company-logo/foodbank.png', name: 'Foodbank BKK' },
+	{ logoUrl: 'assets/company-logo/skooldio.png', name: 'Skooldio Company' },
+	{ logoUrl: 'assets/company-logo/atmosph.png', name: 'Atmosph Company' },
+	{ logoUrl: 'assets/company-logo/uxth.png', name: 'UX Thailand Communities' },
+	{ logoUrl: 'assets/company-logo/cjworx.png', name: 'CJWORX Company' },
+	{ logoUrl: 'assets/company-logo/digital-spirals.png', name: 'Digital Spirals Company' },
+	{ logoUrl: 'assets/company-logo/suffix.png', name: 'Suffix Company' }
+];
+---
+
+<Container
+	className={'mt-12 flex flex-col items-center justify-center overflow-hidden md:mx-auto md:mt-16'}
+>
+	<p class={'joey_subtitle2_bold'}>Brands what I have worked</p>
+	<Carousel className={'mt-6'}>
+		{
+			COMPANIES.map((company) => (
+				<swiper-slide>
+					<CompanyBox company={company} />
+				</swiper-slide>
+			))
+		}
+	</Carousel>
+</Container>
