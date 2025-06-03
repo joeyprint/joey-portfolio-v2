@@ -4,6 +4,7 @@ import Container from '@/components/Container.astro';
 import DownloadOutlinedIcon from '@/components/icons/DownloadOutlinedIcon.astro';
 import MediumIcon from '@/components/icons/MediumIcon.astro';
 import Link from '@/components/Link.astro';
+import HamburgerMenu from './HamburgerMenu.astro';
 ---
 
 <script>
@@ -28,7 +29,7 @@ import Link from '@/components/Link.astro';
 	<Container className="my-auto">
 		<div class="flex items-center justify-between py-2.5">
 			<img src="/assets/logo/wasin-full-logo-light.svg" alt="Joey Logo" />
-			<div class="flex items-center justify-center gap-4">
+			<div class="hidden items-center justify-center gap-4 md:flex">
 				<Link className={'hidden sm:inline-flex'} color="inherit" href="#projects">Projects</Link>
 				<Link
 					color="inherit"
@@ -44,6 +45,7 @@ import Link from '@/components/Link.astro';
 					Get my resume
 				</Button>
 			</div>
+			<HamburgerMenu className={'block md:hidden'} />
 		</div>
 	</Container>
 </div>
