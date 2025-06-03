@@ -1,0 +1,98 @@
+---
+import IconButton from '@/components/IconButton.astro';
+import HamburgerMenuIcon from '@/components/icons/HamburgerMenuIcon.astro';
+import CloseIcon from '@/components/icons/CloseIcon.astro';
+import DownloadOutlinedIcon from '@/components/icons/DownloadOutlinedIcon.astro';
+import MediumIcon from '@/components/icons/MediumIcon.astro';
+import Link from '@/components/Link.astro';
+
+interface Props {
+	className?: string;
+}
+
+const { className = '', ...restProps } = Astro.props;
+---
+
+<script>
+	const hamburgerMenu = document.getElementById('joey-hamburger-menu');
+	const backdrop = document.getElementById('joey-backdrop');
+	const closeMenu = document.getElementById('joey-close-menu');
+	const drawerMenu = document.getElementById('joey-drawer-menu');
+
+	const openAppbarMenu = () => {
+		const backdropClassName = backdrop?.className;
+		const newBackdropClassName = backdropClassName?.replace('hidden', 'block');
+
+		const drawerClassName = drawerMenu?.className;
+		let newDrawerClassName = drawerClassName?.replace('-right-9/12 sm:-right-6/12', 'right-0');
+		backdrop?.setAttribute('class', `${newBackdropClassName}`);
+		drawerMenu?.setAttribute('class', `${newDrawerClassName}`);
+	};
+
+	const closeAppbarMenu = () => {
+		const backdropClassName = backdrop?.className;
+		const newBackdropClassName = backdropClassName?.replace('block', 'hidden');
+
+		const drawerClassName = drawerMenu?.className;
+		let newDrawerClassName = drawerClassName?.replace('right-0', '-right-9/12 sm:-right-6/12');
+
+		backdrop?.setAttribute('class', `${newBackdropClassName}`);
+		drawerMenu?.setAttribute('class', `${newDrawerClassName}`);
+	};
+
+	hamburgerMenu?.addEventListener('click', () => {
+		openAppbarMenu();
+	});
+
+	closeMenu?.addEventListener('click', () => {
+		closeAppbarMenu();
+	});
+</script>
+
+<IconButton
+	id="joey-hamburger-menu"
+	variant={'text'}
+	className={`text-typography-primary ${className}`}
+	{...restProps}
+>
+	<HamburgerMenuIcon />
+</IconButton>
+
+<div
+	id={'joey-backdrop'}
+	class={'bg-common-black/50 hidden fixed top-0 left-0 h-screen w-screen transition-all duration-500 ease-in-out'}
+>
+</div>
+
+<div
+	id={'joey-drawer-menu'}
+	class={'bg-common-white max-w-9/12 sm:max-w-6/12 w-full pt-21 pb-16 px-6 min-h-screen flex fixed top-0 -right-9/12 sm:-right-6/12 flex-col gap-2 items-end transition-right duration-500 ease-in-out'}
+>
+	<IconButton
+		id="joey-close-menu"
+		variant={'text'}
+		className="text-typography-primary absolute top-4 right-2"
+		{...restProps}
+	>
+		<CloseIcon />
+	</IconButton>
+	<Link className={'inline-flex'} color="inherit" href="#projects">Projects</Link>
+	<Link
+		color="inherit"
+		href="https://medium.com/@joeywasin"
+		target="_blank"
+		className={'inline-flex items-center gap-1'}
+	>
+		<span><MediumIcon /></span>
+		Medium
+	</Link>
+	<Link
+		color="inherit"
+		href="https://drive.google.com/file/d/1b3PzztWTgOYjBwmabFryQ7j-kS0SVZiX/view?usp=sharing"
+		target="_blank"
+		className={'inline-flex items-center gap-1'}
+	>
+		<span><DownloadOutlinedIcon /></span>
+		Get my resume
+	</Link>
+</div>
