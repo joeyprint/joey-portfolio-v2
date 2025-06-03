@@ -45,6 +45,16 @@ const { content } = Astro.props;
 		<link rel="manifest" href="/favicon/site.webmanifest" />
 
 		<title>{content.title}</title>
+
+		<!-- Open Graph -->
+		<meta property="”og:title”" content="Wasin Wachirapusitanun" />
+		<meta
+			property="og:description"
+			content="I'm a software developer from Thailand. We live by these words in everything we develop and every story we tell. The web and applications mustn't be useless for an organization."
+		/>
+		<meta property="og:image" content="https://www.wasin.dev/assets/images/thumbnail.jpg" />
+		<meta property="”og:image:width”" content="1200" />
+		<meta property="”og:image:height”" content="630" />
 	</head>
 	<body>
 		<Appbar />
