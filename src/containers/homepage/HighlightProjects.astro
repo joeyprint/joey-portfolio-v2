@@ -6,13 +6,27 @@ import ProjectItem from '@/components/ProjectItem.astro';
 import Link from '@/components/Link.astro';
 ---
 
+<script>
+	import { navigate } from 'astro:transitions/client';
+
+	const viewProjectsButton = document.getElementById('view-projects-button');
+
+	const goToProjects = () => {
+		navigate('/projects');
+	};
+
+	viewProjectsButton?.addEventListener('click', () => {
+		goToProjects();
+	});
+</script>
+
 <Container className={'mt-16 md:mt-22.5'}>
 	<div class="flex justify-between">
 		<h3 class="joey_heading3">Highlight Projects</h3>
-		<!-- <Button variant={'text'}>
+		<Button id={'view-projects-button'} variant={'text'}>
 			View All
 			<span slot="end-icon"><ArrowRight /></span>
-		</Button> -->
+		</Button>
 	</div>
 	<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
 		<!-- ODDS | SET Corporate Value Up -->
