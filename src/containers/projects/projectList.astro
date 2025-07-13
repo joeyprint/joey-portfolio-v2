@@ -1,0 +1,120 @@
+---
+import Container from '@/components/Container.astro';
+import Link from '@/components/Link.astro';
+import ProjectItem from '@/components/ProjectItem.astro';
+---
+
+<Container>
+	<h3 class="joey_heading3">My Projects</h3>
+	<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
+		<!-- ODDS | SET Corporate Value Up -->
+		<ProjectItem name={'SET | Corporate Value Up'} imageUrl={'assets/projects/set-cvup.png'}>
+			<p slot={'project-description'} class={'joey_body1 text-center'}>
+				To encourage and guide companies to enhance their corporate value through improved
+				management, increase transparency
+			</p>
+		</ProjectItem>
+
+		<!-- ODDS | BKK Food Bank Digital -->
+		<ProjectItem
+			name={'BKK Food Bank Digital Back-office'}
+			imageUrl={'assets/projects/foodbank.png'}
+		>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				Products for BKK admins to manage products for sharing foods to vulnerable people.
+				<Link
+					href="https://medium.com/odds-team/กว่าจะเป็น-bkk-food-bank-digital-bcde62065616"
+					target="_blank"
+				>
+					[Read more]
+				</Link>
+			</span>
+		</ProjectItem>
+
+		<!-- UXTH | UX Thailand Conference 2024 -->
+		<ProjectItem name={'UX Thailand Conference 2024'} imageUrl={'assets/projects/uxthailand.png'}>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				Largest UX design conference in Thailand. Join our community
+				<Link href="https://www.facebook.com/groups/uxthailand" target="_blank">
+					[Facebook Group]
+				</Link>
+			</span>
+		</ProjectItem>
+
+		<!-- Skooldio | TCASter Application -->
+		<ProjectItem name={'TCASter Application'} imageUrl={'assets/projects/tcaster-app.png'}>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				Supporting application for high-school students' calculated admission score to prepare
+				admission to university. Available in
+				<Link href="https://apps.apple.com/th/app/tcaster/id1267234768?l=th" target="_blank">
+					App Store
+				</Link> and
+				<Link
+					href="https://play.google.com/store/apps/details?id=com.skooldio.tcaster&hl=en"
+					target="_blank"
+				>
+					Play Store
+				</Link>
+			</span>
+		</ProjectItem>
+
+		<!-- Skooldio | TCASter ExamHub -->
+		<ProjectItem name={'TCASter ExamHub'} imageUrl={'assets/projects/tcaster-examhub.png'}>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				A practice testing platform that simulates post-lesson exercises to help students prepare
+				effectively for Thailand’s TCAS entrance examinations.
+			</span>
+		</ProjectItem>
+
+		<!-- Skooldio | TCASter Mock Exam -->
+		<ProjectItem name={'TCASter Mock Exam'} imageUrl={'assets/projects/tcaster-mock-exam.png'}>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				A mock exam system that provides high school students with a realistic testing experience to
+				effectively gauge their performance
+			</span>
+		</ProjectItem>
+
+		<!-- Skooldio | QMS | Question Bank -->
+		<ProjectItem
+			name={'Learn Education | Question Bank'}
+			imageUrl={'assets/projects/question-management-system.png'}
+		>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				An all-in-one examination platform that helps teachers create exams, manage test schedules,
+				and maintain a centralized question bank
+			</span>
+		</ProjectItem>
+
+		<!-- Skooldio | Learnneo Application -->
+		<ProjectItem name={'Learnneo Application'} imageUrl={'assets/projects/learnneo.png'}>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				Best learning buddy for students to learn and track their progress and achievements.
+			</span>
+		</ProjectItem>
+
+		<!-- Skooldio | NIA Feed -->
+		<ProjectItem
+			name={'Learn Satit Pattana Dashboard'}
+			imageUrl={'assets/projects/learn-satit-pattana.png'}
+		>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				An interactive dashboard for tracking students' academic progress and supporting their
+				individual learning journeys.
+			</span>
+		</ProjectItem>
+
+		<!-- Digital Spirals | NIA Feed -->
+		<ProjectItem name={'NIA Feed'} imageUrl={'assets/projects/nia-feed.png'}>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				Website for National Innovation Agency (NIA) to share news and information about company
+			</span>
+		</ProjectItem>
+
+		<!-- Atmosph | CalledP Project -->
+		<ProjectItem name={'CalledP'} imageUrl={'assets/projects/called-p.png'}>
+			<span slot={'project-description'} class={'joey_body1 text-center'}>
+				A personalized fashion brand website that empowers self-expression through every stitch.
+			</span>
+		</ProjectItem>
+	</div>
+</Container>

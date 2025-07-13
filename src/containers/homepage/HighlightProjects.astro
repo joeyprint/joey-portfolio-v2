@@ -6,21 +6,38 @@ import ProjectItem from '@/components/ProjectItem.astro';
 import Link from '@/components/Link.astro';
 ---
 
+<script>
+	import { navigate } from 'astro:transitions/client';
+
+	const viewProjectsButton = document.getElementById('view-projects-button');
+
+	const goToProjects = () => {
+		navigate('/projects');
+	};
+
+	viewProjectsButton?.addEventListener('click', () => {
+		goToProjects();
+	});
+</script>
+
 <Container className={'mt-16 md:mt-22.5'}>
 	<div class="flex justify-between">
 		<h3 class="joey_heading3">Highlight Projects</h3>
-		<!-- <Button variant={'text'}>
+		<Button id={'view-projects-button'} variant={'text'}>
 			View All
 			<span slot="end-icon"><ArrowRight /></span>
-		</Button> -->
+		</Button>
 	</div>
 	<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
+		<!-- ODDS | SET Corporate Value Up -->
 		<ProjectItem name={'SET | Corporate Value Up'} imageUrl={'assets/projects/set-cvup.png'}>
 			<p slot={'project-description'} class={'joey_body1 text-center'}>
 				To encourage and guide companies to enhance their corporate value through improved
 				management, increase transparency
 			</p>
 		</ProjectItem>
+
+		<!-- ODDS | BKK Food Bank Digital -->
 		<ProjectItem
 			name={'BKK Food Bank Digital Back-office'}
 			imageUrl={'assets/projects/foodbank.png'}
@@ -35,6 +52,8 @@ import Link from '@/components/Link.astro';
 				</Link>
 			</span>
 		</ProjectItem>
+
+		<!-- UXTH | UX Thailand Conference 2024 -->
 		<ProjectItem name={'UX Thailand Conference 2024'} imageUrl={'assets/projects/uxthailand.png'}>
 			<span slot={'project-description'} class={'joey_body1 text-center'}>
 				Largest UX design conference in Thailand. Join our community
@@ -43,9 +62,11 @@ import Link from '@/components/Link.astro';
 				</Link>
 			</span>
 		</ProjectItem>
+
+		<!-- Skooldio | TCASter Application -->
 		<ProjectItem name={'TCASter Application'} imageUrl={'assets/projects/tcaster-app.png'}>
 			<span slot={'project-description'} class={'joey_body1 text-center'}>
-				Supporting application for high-school students’ calculated admission score to prepare
+				Supporting application for high-school students' calculated admission score to prepare
 				admission to university. Available in
 				<Link href="https://apps.apple.com/th/app/tcaster/id1267234768?l=th" target="_blank">
 					App Store
