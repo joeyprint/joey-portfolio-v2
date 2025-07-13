@@ -4,12 +4,15 @@ import GitHubIcon from '@/components/icons/GitHubIcon.astro';
 import LinkedInIcon from '@/components/icons/LinkedInIcon.astro';
 import MediumIcon from '@/components/icons/MediumIcon.astro';
 import Link from '@/components/Link.astro';
+
+const currentDate = new Date();
+const currentYear = currentDate.getFullYear();
 ---
 
 <div class="bg-primary-900">
 	<Container>
 		<div class="flex items-center justify-between py-4">
-			<p class="joey_caption md:joey_body1 text-white">© 2025 | Wasin Wachirapusitanun</p>
+			<p class="joey_caption md:joey_body1 text-white">© {currentYear} | Wasin Wachirapusitanun</p>
 			<div class="flex items-center gap-2">
 				<Link href="https://medium.com/@joeywasin" target="_blank" color="white">
 					<MediumIcon />
