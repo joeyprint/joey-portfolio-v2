@@ -13,7 +13,7 @@ const { company, ...restProps } = Astro.props;
 
 <div
 	{...restProps}
-	class={`flex flex-col justify-center items-center rounded-xl bg-white p-4 cursor-pointer hover:bg-primary-500 ${restProps.class}`}
+	class={`flex flex-col justify-center items-center rounded-xl bg-white p-4 hover:bg-primary-500 ${restProps.class}`}
 >
 	<img src={company.logoUrl} alt={company.name} class="h-16 w-auto" />
 </div>

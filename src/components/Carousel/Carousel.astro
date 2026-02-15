@@ -1,45 +1,39 @@
 ---
 // Swiper Document - https://swiperjs.com/element#installation
-import 'swiper/css';
-import 'swiper/css/bundle';
-import 'swiper/css/autoplay';
-import 'swiper/css/controller';
+import type { HTMLAttributes } from 'astro/types';
 import { cn } from '@/lib/utils';
 
-interface Props {
+import 'swiper/css';
+
+interface Props extends HTMLAttributes<'div'> {
 	className?: string;
 }
 
-const { className } = Astro.props;
+const { className, ...restProps } = Astro.props;
 ---
 
 <script>
-	document.addEventListener('DOMContentLoaded', () => {
-		const swiperEl = document.querySelector('swiper-container');
+	import { register } from 'swiper/element/bundle';
+	register();
 
+	const swiperEls = document.querySelectorAll('swiper-container');
+	swiperEls.forEach((swiperEl) => {
 		const swiperParams = {
 			spaceBetween: 24,
-			// centeredSlides: true,
-			// centeredSlidesBounds: true,
 			loop: true,
 			slidesToScroll: 1,
+			autoplay: {
+				delay: 2500,
+				disableOnInteraction: false
+			},
 			breakpoints: {
-				0: {
-					slidesPerView: 1.5
-				},
-				640: {
-					slidesPerView: 2.5
-				},
-				768: {
-					slidesPerView: 3.5
-				},
-				1200: {
-					slidesPerView: 5
-				}
+				0: { slidesPerView: 1.5 },
+				640: { slidesPerView: 2.5 },
+				768: { slidesPerView: 3.5 },
+				1200: { slidesPerView: 5.5 }
 			}
 		};
 
-		// now we need to assign all parameters to Swiper element
 		if (swiperEl) {
 			Object.assign(swiperEl, swiperParams);
 			swiperEl.initialize();
@@ -47,6 +41,6 @@ const { className } = Astro.props;
 	});
 </script>
 
-<swiper-container class={cn('max-w-[1200px] w-full', className)}>
+<swiper-container init="false" class={cn('max-w-[1200px] w-full', className)} {...restProps}>
 	<slot />
 </swiper-container>
