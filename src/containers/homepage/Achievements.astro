@@ -1,0 +1,33 @@
+---
+import Achievement from '@/components/Achievement.astro';
+import Container from '@/components/Container.astro';
+import FolderFilledIcon from '@/components/icons/FolderFilledIcon.astro';
+import HeartIcon from '@/components/icons/HeartIcon.astro';
+import SoftwareDevelopment from '@/components/icons/SoftwareDevelopmentIcon.astro';
+---
+
+<Container
+	className={'mt-12 flex flex-col items-center justify-center overflow-hidden md:mx-auto md:mt-24'}
+>
+	<p class={'joey_heading3'}>Collaborate to create impactful results</p>
+	<div class="mt-9 flex w-full flex-col flex-wrap items-center justify-center gap-6 md:flex-row">
+		<Achievement
+			title="Software Development"
+			description="Focus on building scalable web and mobile applications and specialize in breaking down business into meaningful technical stories."
+		>
+			<SoftwareDevelopment slot={'icon'} class="size-16" />
+		</Achievement>
+		<Achievement
+			title="Team Development & Leadership"
+			description="Coordinated cross-functional teams & large-scale scrum, including managing about 30 people per team."
+		>
+			<HeartIcon slot={'icon'} class="size-16" />
+		</Achievement>
+		<Achievement
+			title="Product Management"
+			description="Proactively unblock dependencies and align cross-functional teams. By breaking down complex business requirements into meaningful ones."
+		>
+			<FolderFilledIcon slot={'icon'} class="size-16" />
+		</Achievement>
+	</div>
+</Container>

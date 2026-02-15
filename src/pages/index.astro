@@ -1,4 +1,5 @@
 ---
+import Achievements from '@/containers/homepage/Achievements.astro';
 import CompanyList from '@/containers/homepage/CompanyList.astro';
 import HeroBanner from '@/containers/homepage/HeroBanner.astro';
 import HighlightProjects from '@/containers/homepage/HighlightProjects.astro';
@@ -8,5 +9,6 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 <BaseLayout content={{ title: 'Wasin Wachirapusitanun | Portfolio' }}>
 	<HeroBanner />
 	<CompanyList />
+	<Achievements />
 	<HighlightProjects />
 </BaseLayout>

@@ -1,7 +1,7 @@
 {
 	"name": "joey-portfolio-v2",
 	"type": "module",
-	"version": "2.1.2",
+	"version": "2.2.0",
 	"license": "MIT",
 	"scripts": {
 		"dev": "astro dev",
