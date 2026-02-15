@@ -6,6 +6,7 @@ import Container from '@/components/Container.astro';
 const COMPANIES = [
 	{ logoUrl: 'assets/company-logo/odds.png', name: 'ODDS Teams' },
 	{ logoUrl: 'assets/company-logo/set.png', name: 'The Stock Exchange Thailand' },
+	{ logoUrl: 'assets/company-logo/ttb.png', name: 'TMBThanachart Bank' },
 	{ logoUrl: 'assets/company-logo/foodbank.png', name: 'Foodbank BKK' },
 	{ logoUrl: 'assets/company-logo/skooldio.png', name: 'Skooldio Company' },
 	{ logoUrl: 'assets/company-logo/atmosph.png', name: 'Atmosph Company' },
@@ -20,7 +21,7 @@ const COMPANIES = [
 	className={'mt-12 flex flex-col items-center justify-center overflow-hidden md:mx-auto md:mt-16'}
 >
 	<p class={'joey_subtitle2_bold'}>Brands what I have worked</p>
-	<Carousel className={'mt-6'}>
+	<Carousel class={'mt-6'}>
 		{
 			COMPANIES.map((company) => (
 				<swiper-slide>

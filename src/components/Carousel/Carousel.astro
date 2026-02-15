@@ -5,11 +5,9 @@ import { cn } from '@/lib/utils';
 
 import 'swiper/css';
 
-interface Props extends HTMLAttributes<'div'> {
-	className?: string;
-}
+interface Props extends HTMLAttributes<'div'> {}
 
-const { className, ...restProps } = Astro.props;
+const { ...restProps } = Astro.props;
 ---
 
 <script>
@@ -23,7 +21,7 @@ const { className, ...restProps } = Astro.props;
 			loop: true,
 			slidesToScroll: 1,
 			autoplay: {
-				delay: 2500,
+				delay: 1500,
 				disableOnInteraction: false
 			},
 			breakpoints: {
@@ -41,6 +39,6 @@ const { className, ...restProps } = Astro.props;
 	});
 </script>
 
-<swiper-container init="false" class={cn('max-w-[1200px] w-full', className)} {...restProps}>
+<swiper-container init="false" {...restProps} class={cn('max-w-[1200px] w-full', restProps.class)}>
 	<slot />
 </swiper-container>
