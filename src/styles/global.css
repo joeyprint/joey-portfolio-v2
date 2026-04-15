@@ -152,6 +152,7 @@
 	--font-size-heading3: 1.75rem;
 	--font-size-heading2: 2rem;
 	--font-size-heading1: 2.25rem;
+	--font-size-quote: 3rem;
 
 	/* Typography Font-weight */
 	--font-weight-light: 300;
@@ -259,6 +260,18 @@
 		font-weight: var(--font-weight-regular);
 		font-size: var(--font-size-body1);
 		line-height: var(--line-height-body1);
+	}
+
+	.joey_caption_bold {
+		font-weight: var(--font-weight-bold);
+		font-size: var(--font-size-caption);
+		line-height: var(--line-height-caption);
+	}
+
+	.joey_quote {
+		font-weight: var(--font-weight-bold);
+		font-size: var(--font-size-heading2);
+		line-height: 130%;
 	}
 }
 
