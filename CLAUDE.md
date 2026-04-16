@@ -24,8 +24,8 @@ This is a personal portfolio site built with **Astro 5** + **React 19** + **Tail
 
 - `src/pages/` — Astro file-based routing. Currently two pages: `index.astro` (homepage) and `projects.astro`.
 - `src/layouts/` — `BaseLayout.astro` wraps every page (Appbar, Footer, analytics). `Appbar.astro`, `Footer.astro`, and `HamburgerMenu.astro` are layout-level shell components.
-- `src/containers/` — Section-level components that compose page sections. Organized by page (e.g., `homepage/`, `projects/`). These are the main content units used in pages.
-- `src/components/` — Reusable UI primitives (`Button`, `Container`, `Link`, `ProjectItem`, `Achievement`, `CompanyBox`, `Carousel/`, and icon components). The `Button` component uses `class-variance-authority` for variant/size/color composition.
+- `src/containers/` — Section-level components that compose page sections. Organized by page (e.g., `homepage/`, `projects/`). These are the main content units used in pages. Homepage containers: `HeroBanner`, `CompanyList`, `Achievements` (Mastery Results section), `HighlightProjects` (Excellence Projects section), `QuoteSection`, `ContactMe`.
+- `src/components/` — Reusable UI primitives (`Button`, `Container`, `Link`, `ProjectItem`, `Achievement`, `CompanyBox`, `Carousel/`, and icon components). Icons include `SoftwareDevelopmentIcon`, `HeartIcon`, `FolderFilledIcon`, `FacilitateIcon`, `GitHubIcon`, `LinkedInIcon`, `DownloadOutlinedIcon`, `MediumIcon`. The `Button` component uses `class-variance-authority` for variant/size/color composition.
 - `src/lib/utils.ts` — `cn()` helper (clsx + tailwind-merge).
 - `src/styles/global.css` — Global Tailwind config, custom CSS variables, and `joey_*` typography utility classes.
 - `public/assets/` — Static images (profile photos, company logos, project screenshots).
@@ -34,9 +34,9 @@ This is a personal portfolio site built with **Astro 5** + **React 19** + **Tail
 
 Tailwind v4 is configured via `@tailwindcss/vite` plugin (no `tailwind.config.*` file). The design tokens — colors (`primary-*`, `grayscale-*`, `typography-*`), font sizes, font weights, line heights, and spacing — are defined as CSS custom properties in `src/styles/global.css` under `@theme`.
 
-Typography uses a set of semantic utility classes defined in `global.css` (`joey_heading1` through `joey_caption`, `joey_button`). Use these classes for text styling instead of raw Tailwind font utilities.
+Typography uses a set of semantic utility classes defined in `global.css` (`joey_heading1` through `joey_caption`, `joey_button`, `joey_caption_bold`, `joey_quote`). Use these classes for text styling instead of raw Tailwind font utilities. `--font-size-quote: 3rem` is available for 48px quote text.
 
-Dark mode is implemented with a `.dark` class variant (`@custom-variant dark (&:is(.dark *))`). The `Toolbar.astro` component handles the dark/light toggle.
+Dark mode is implemented with a `.dark` class variant (`@custom-variant dark (&:is(.dark *))`). The `Toolbar.astro` component handles the dark/light toggle. `CompanyList` uses a flex-wrap grid (no Swiper carousel) — 2 per row on mobile, 3 on sm, 6 on lg.
 
 ### Path aliases
 
