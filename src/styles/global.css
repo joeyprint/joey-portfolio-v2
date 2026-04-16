@@ -45,7 +45,7 @@
 	--radius: 0.625rem;
 	--primary: var(--color-primary-500);
 	--primary-foreground: var(--color-typography-primary);
-	--background: hsla(0, 0%, 94%, 1);
+	--background: hsla(0, 0%, 100%, 1);
 	--foreground: var(--color-typography-primary);
 	--card: oklch(1 0 0);
 	--card-foreground: var(--color-typography-primary);

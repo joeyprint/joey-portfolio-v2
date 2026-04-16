@@ -5,6 +5,7 @@ import Button from '@/components/Button.astro';
 import GitHubIcon from '@/components/icons/GitHubIcon.astro';
 import LinkedInIcon from '@/components/icons/LinkedInIcon.astro';
 import Container from '@/components/Container.astro';
+import { cn } from '@/lib/utils';
 
 const startWorkingDate = new Date('12/15/2019');
 const currentDate = new Date();
@@ -32,8 +33,8 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
 	});
 </script>
 
-<div class="bg-primary-100 w-full py-10 md:py-16">
-	<Container className="flex flex-col items-center gap-8 lg:flex-row">
+<div class="bg-primary-100 w-full pt-12 pb-16 md:pb-24">
+	<Container className="flex flex-col items-center gap-8 md:flex-row">
 		<div class="flex flex-1 shrink-0 flex-col gap-6">
 			<h1 class="joey_subtitle1">Hi, I'm Joey Wasin</h1>
 			<h2 class="joey_heading1 text-primary">Software Engineer & UX Product</h2>
@@ -56,8 +57,11 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
 		</div>
 		<img
 			src="/assets/profile/SIT_Joey.png"
-			alt="Joey AI profile image"
-			class="aspect-(--aspect-ratio-16-9) flex-1 shrink-0 rounded-xl object-cover"
+			alt="Joey profile image"
+			class={cn(
+				'flex-1 shrink-0 rounded-xl object-cover md:max-w-[400px] lg:max-w-[584px]',
+				'aspect-(--aspect-ratio-1-1) sm:aspect-(--aspect-ratio-16-9) md:aspect-(--aspect-ratio-1-1) lg:aspect-(--aspect-ratio-16-9)'
+			)}
 		/>
 	</Container>
 </div>
