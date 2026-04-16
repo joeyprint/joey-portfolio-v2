@@ -17,14 +17,14 @@ const COMPANIES = [
 ---
 
 <Container className={'mt-12 flex flex-col items-center justify-center md:mt-16'}>
-	<p class={'joey_caption_bold uppercase tracking-widest text-primary-700 text-center'}>
-		BUILT PROFESSIONAL BRANDS
+	<p class={'joey_body2_bold uppercase tracking-[50%] text-primary-700 text-center'}>
+		Built <br class={'block md:hidden'} />Professional <br class={'block md:hidden'} />Brands
 	</p>
-	<div class="mt-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
+	<div class="mt-6 flex flex-wrap items-center justify-center gap-4">
 		{
 			COMPANIES.map((company) => (
-				<div class="w-[calc(50%-1rem)] sm:w-[calc(33.333%-1.5rem)] lg:w-[calc(16.666%-1.5rem)]">
-					<CompanyBox company={company} />
+				<div class="flex max-w-[125px] justify-center sm:max-w-[150px] md:max-w-[175px]">
+					<img src={company.logoUrl} alt={company.name} class="w-auto" />
 				</div>
 			))
 		}
