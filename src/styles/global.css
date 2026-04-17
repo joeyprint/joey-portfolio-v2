@@ -170,6 +170,7 @@
 	--line-height-heading3: 125%;
 	--line-height-heading2: 125%;
 	--line-height-heading1: 125%;
+	--line-height-quote: 125%;
 
 	/* Spacing */
 	--appbar-height: 4.25rem;
@@ -270,8 +271,8 @@
 
 	.joey_quote {
 		font-weight: var(--font-weight-bold);
-		font-size: var(--font-size-heading2);
-		line-height: 130%;
+		font-size: var(--font-size-quote);
+		line-height: var(--line-height-quote);
 	}
 }
 
