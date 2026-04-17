@@ -1,33 +1,47 @@
 ---
 import Achievement from '@/components/Achievement.astro';
 import Container from '@/components/Container.astro';
-import FolderFilledIcon from '@/components/icons/FolderFilledIcon.astro';
+import FacilitateIcon from '@/components/icons/FacilitateIcon.astro';
 import HeartIcon from '@/components/icons/HeartIcon.astro';
+import FolderFilledIcon from '@/components/icons/FolderFilledIcon.astro';
 import SoftwareDevelopment from '@/components/icons/SoftwareDevelopmentIcon.astro';
 ---
 
-<Container
-	className={'mt-12 flex flex-col items-center justify-center overflow-hidden md:mx-auto md:mt-24'}
->
-	<p class={'joey_heading3'}>Collaborate to create impactful results</p>
-	<div class="mt-9 flex w-full flex-col flex-wrap items-center justify-center gap-6 md:flex-row">
-		<Achievement
-			title="Software Development"
-			description="Focus on building scalable web and mobile applications and specialize in breaking down business into meaningful technical stories."
-		>
-			<SoftwareDevelopment slot={'icon'} class="size-16" />
-		</Achievement>
-		<Achievement
-			title="Team Development & Leadership"
-			description="Coordinated cross-functional teams & large-scale scrum, including managing about 30 people per team."
-		>
-			<HeartIcon slot={'icon'} class="size-16" />
-		</Achievement>
-		<Achievement
-			title="Product Management"
-			description="Proactively unblock dependencies and align cross-functional teams. By breaking down complex business requirements into meaningful ones."
-		>
-			<FolderFilledIcon slot={'icon'} class="size-16" />
-		</Achievement>
-	</div>
-</Container>
+<div class="bg-grayscale-50 mt-12 w-full py-21 md:mt-16">
+	<Container>
+		<div class="text-center">
+			<p class="joey_body2_bold text-primary-700 tracking-[50%] uppercase">Impactful</p>
+			<h3 class="joey_heading2 mt-1">Mastery Results</h3>
+		</div>
+		<div class="mt-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+			<Achievement
+				class="md:max-w-none lg:max-w-none"
+				title="Software Development"
+				description="Focus on building scalable web and mobile applications and specialize in breaking down business into meaningful technical stories."
+			>
+				<SoftwareDevelopment slot={'icon'} class="size-9" />
+			</Achievement>
+			<Achievement
+				class="md:max-w-none lg:max-w-none"
+				title="Team Development & Leadership"
+				description="Coordinated cross-functional teams & large-scale scrum, including managing about 30 people per team."
+			>
+				<HeartIcon slot={'icon'} class="size-9" />
+			</Achievement>
+			<Achievement
+				class="md:max-w-none lg:max-w-none"
+				title="Product Management"
+				description="Proactively unblock dependencies and align cross-functional teams. By breaking down complex business requirements into meaningful ones."
+			>
+				<FolderFilledIcon slot={'icon'} class="size-9" />
+			</Achievement>
+			<Achievement
+				class="md:max-w-none lg:max-w-none"
+				title="Facilitate"
+				description="Facilitate bridging design and code through high-impact, up-skilling 30+ persons, and accelerating product discovery from MVP to scale."
+			>
+				<FacilitateIcon slot={'icon'} class="size-9" />
+			</Achievement>
+		</div>
+	</Container>
+</div>

@@ -1,5 +1,4 @@
 ---
-import Carousel from '@/components/Carousel/Carousel.astro';
 import CompanyBox from '@/components/CompanyBox.astro';
 import Container from '@/components/Container.astro';
 
@@ -17,17 +16,17 @@ const COMPANIES = [
 ];
 ---
 
-<Container
-	className={'mt-12 flex flex-col items-center justify-center overflow-hidden md:mx-auto md:mt-16'}
->
-	<p class={'joey_subtitle2_bold'}>Brands what I have worked</p>
-	<Carousel class={'mt-6'}>
+<Container className={'mt-12 flex flex-col items-center justify-center md:mt-16'}>
+	<p class={'joey_body2_bold uppercase tracking-[50%] text-primary-700 text-center'}>
+		Built <br class={'block md:hidden'} />Professional <br class={'block md:hidden'} />Brands
+	</p>
+	<div class="mt-6 flex flex-wrap items-center justify-center gap-4">
 		{
 			COMPANIES.map((company) => (
-				<swiper-slide>
-					<CompanyBox company={company} />
-				</swiper-slide>
+				<div class="flex max-w-[125px] justify-center sm:max-w-[150px] md:max-w-[175px]">
+					<img src={company.logoUrl} alt={company.name} class="w-auto" />
+				</div>
 			))
 		}
-	</Carousel>
+	</div>
 </Container>

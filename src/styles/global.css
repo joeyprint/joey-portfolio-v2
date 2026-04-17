@@ -45,7 +45,7 @@
 	--radius: 0.625rem;
 	--primary: var(--color-primary-500);
 	--primary-foreground: var(--color-typography-primary);
-	--background: hsla(0, 0%, 94%, 1);
+	--background: hsla(0, 0%, 100%, 1);
 	--foreground: var(--color-typography-primary);
 	--card: oklch(1 0 0);
 	--card-foreground: var(--color-typography-primary);
@@ -152,6 +152,7 @@
 	--font-size-heading3: 1.75rem;
 	--font-size-heading2: 2rem;
 	--font-size-heading1: 2.25rem;
+	--font-size-quote: 3rem;
 
 	/* Typography Font-weight */
 	--font-weight-light: 300;
@@ -169,6 +170,7 @@
 	--line-height-heading3: 125%;
 	--line-height-heading2: 125%;
 	--line-height-heading1: 125%;
+	--line-height-quote: 125%;
 
 	/* Spacing */
 	--appbar-height: 4.25rem;
@@ -259,6 +261,18 @@
 		font-weight: var(--font-weight-regular);
 		font-size: var(--font-size-body1);
 		line-height: var(--line-height-body1);
+	}
+
+	.joey_caption_bold {
+		font-weight: var(--font-weight-bold);
+		font-size: var(--font-size-caption);
+		line-height: var(--line-height-caption);
+	}
+
+	.joey_quote {
+		font-weight: var(--font-weight-bold);
+		font-size: var(--font-size-quote);
+		line-height: var(--line-height-quote);
 	}
 }
 

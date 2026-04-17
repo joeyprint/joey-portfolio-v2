@@ -5,6 +5,7 @@ import Button from '@/components/Button.astro';
 import GitHubIcon from '@/components/icons/GitHubIcon.astro';
 import LinkedInIcon from '@/components/icons/LinkedInIcon.astro';
 import Container from '@/components/Container.astro';
+import { cn } from '@/lib/utils';
 
 const startWorkingDate = new Date('12/15/2019');
 const currentDate = new Date();
@@ -32,30 +33,35 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
 	});
 </script>
 
-<Container className="aligns-start mx-auto flex flex-col justify-center gap-8 lg:flex-row">
-	<img
-		src="/assets/profile/SIT_Joey.png"
-		alt="Joey AI profile image"
-		class="aspect-(--aspect-ratio-16-9) flex-1 shrink-0 rounded-xl object-cover"
-	/>
-	<div class="align-start flex flex-1 shrink-0 flex-col gap-6">
-		<h1 class="joey_subtitle1">Hi, I'm Joey Wasin</h1>
-		<h2 class="joey_heading1 text-primary">Freelance | Software Engineer</h2>
-		<p class="joey_body1">
-			Product design and web development. I have been working in the development field for {
-				diffYear
-			} years so far. I specialize in front-end development and UX/UI design. We live by these words
-			in everything we develop and every story we tell. The web and applications mustn't be useless for
-			an organization.
-		</p>
-		<div class="flex gap-4">
-			<Button id="hero-linkedin-button"
-				><span slot="start-icon"><LinkedInIcon /></span>Linked In</Button
-			>
-			<Button id="hero-github-button" variant="outlined">
-				<span slot="start-icon"><GitHubIcon /></span>
-				Github
-			</Button>
+<div class="bg-primary-100 w-full pt-12 pb-16 md:pb-24">
+	<Container className="flex flex-col-reverse items-center gap-8 md:flex-row">
+		<div class="flex flex-1 shrink-0 flex-col gap-4 md:gap-6">
+			<h1 class="joey_subtitle1">Hi, I'm Joey Wasin</h1>
+			<h2 class="joey_heading1 text-primary">Software Engineer & UX Product</h2>
+			<p class="joey_body1">
+				Product design and web development. I have been working in the development field for {
+					diffYear
+				} years so far. I specialize in front-end development and UX/UI design. We live by these words
+				in everything we develop and every story we tell. The web and applications mustn't be useless
+				for an organization.
+			</p>
+			<div class="flex gap-4">
+				<Button id="hero-linkedin-button"
+					><span slot="start-icon"><LinkedInIcon /></span>Linked In</Button
+				>
+				<Button id="hero-github-button" variant="outlined">
+					<span slot="start-icon"><GitHubIcon /></span>
+					Github
+				</Button>
+			</div>
 		</div>
-	</div>
-</Container>
+		<img
+			src="/assets/profile/SIT_Joey.png"
+			alt="Joey profile image"
+			class={cn(
+				'flex-1 shrink-0 rounded-xl object-cover md:max-w-[400px] lg:max-w-[584px]',
+				'aspect-(--aspect-ratio-16-9) md:aspect-(--aspect-ratio-1-1) lg:aspect-(--aspect-ratio-16-9)'
+			)}
+		/>
+	</Container>
+</div>
