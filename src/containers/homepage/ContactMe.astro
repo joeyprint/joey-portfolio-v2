@@ -1,5 +1,6 @@
 ---
 import Button from '@/components/Button.astro';
+import Container from '@/components/Container.astro';
 import DownloadOutlinedIcon from '@/components/icons/DownloadOutlinedIcon.astro';
 ---
 
@@ -14,62 +15,51 @@ import DownloadOutlinedIcon from '@/components/icons/DownloadOutlinedIcon.astro'
 	});
 </script>
 
-<div class="bg-primary-100 w-full py-12 md:py-20">
-	<div class="mx-auto max-w-[1200px] px-4">
-		<div class="bg-grayscale-100 rounded-2xl p-6 md:p-12">
-			<div class="flex flex-col gap-8 md:flex-row md:items-start">
-				<!-- Left: heading + description + CTA -->
-				<div class="flex flex-col gap-4 md:w-3/5">
-					<h2 class="joey_heading2 text-primary-900">Let's build the next chapter.</h2>
-					<p class="joey_body1 text-typography-secondary">
-						Available for senior software engineering roles or strategic consulting on engineering
-						and UI/UX foundations.
-					</p>
-					<div class="mt-2">
-						<Button id="contact-view-cv-button">
-							<span slot="start-icon"><DownloadOutlinedIcon /></span>
-							View Full CV
-						</Button>
-					</div>
+<div class="bg-primary-100 w-full px-4 py-12 md:py-20">
+	<Container className="bg-grayscale-100 rounded-2xl px-4 py-12 md:p-16 lg:p-24">
+		<div class="flex flex-col items-start gap-8 md:flex-row md:items-center">
+			<div class="flex flex-1 flex-col gap-8 md:w-3/5">
+				<h2 class="joey_quote text-primary-900">Let's build the next chapter.</h2>
+				<p>
+					Available for senior software engineering roles or strategic consulting on engineering and
+					UI/UX foundations.
+				</p>
+				<div class="mt-2">
+					<Button id="contact-view-cv-button">
+						<span slot="start-icon"><DownloadOutlinedIcon /></span>
+						View Full CV
+					</Button>
 				</div>
+			</div>
 
-				<!-- Right: contact columns -->
-				<div class="flex flex-row gap-8 md:w-2/5 md:justify-end">
-					<!-- Digital Identity -->
-					<div class="flex flex-col gap-3">
-						<p class="joey_caption_bold text-typography-secondary tracking-widest uppercase">
-							Digital Identity
-						</p>
-						<a
-							href="https://www.linkedin.com/in/joeywasin/"
-							target="_blank"
-							class="joey_body1_bold text-typography-primary hover:text-primary transition-colors"
-						>
-							LinkedIn
-						</a>
-						<a
-							href="https://github.com/joeyprint"
-							target="_blank"
-							class="joey_body1_bold text-typography-primary hover:text-primary transition-colors"
-						>
-							GitHub
-						</a>
-					</div>
-
-					<!-- Direct Channel -->
-					<div class="flex flex-col gap-3">
-						<p class="joey_caption_bold text-typography-secondary tracking-widest uppercase">
-							Direct Channel
-						</p>
-						<a
-							href="mailto:wasin.ww1402@gmail.com"
-							class="joey_body1_bold text-typography-primary hover:text-primary transition-colors"
-						>
-							Email Me
-						</a>
-					</div>
+			<div class="flex flex-1 flex-col gap-4 md:flex-row md:gap-8">
+				<div class="flex flex-1 flex-col gap-2">
+					<p class="joey_caption text-primary-900 uppercase">Digital Identity</p>
+					<a
+						href="https://www.linkedin.com/in/joeywasin/"
+						target="_blank"
+						class="joey_body1_bold hover:text-primary transition-colors"
+					>
+						LinkedIn
+					</a>
+					<a
+						href="https://github.com/joeyprint"
+						target="_blank"
+						class="joey_body1_bold hover:text-primary transition-colors"
+					>
+						GitHub
+					</a>
+				</div>
+				<div class="flex flex-1 flex-col gap-2">
+					<p class="joey_caption text-primary-900 uppercase">Direct Channel</p>
+					<a
+						href="mailto:wasin.ww1402@gmail.com"
+						class="joey_body1_bold hover:text-primary transition-colors"
+					>
+						wasin.ww1402@gmail.com
+					</a>
 				</div>
 			</div>
 		</div>
-	</div>
+	</Container>
 </div>
