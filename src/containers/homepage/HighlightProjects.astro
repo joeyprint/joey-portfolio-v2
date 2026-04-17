@@ -9,15 +9,17 @@ import Link from '@/components/Link.astro';
 <script>
 	import { navigate } from 'astro:transitions/client';
 
-	const viewProjectsButton = document.getElementById('view-projects-button');
+	const viewProjectsButton = document.getElementsByClassName('view-projects-button');
 
 	const goToProjects = () => {
 		navigate('/projects');
 	};
 
-	viewProjectsButton?.addEventListener('click', () => {
-		goToProjects();
-	});
+	for (const button of viewProjectsButton) {
+		button.addEventListener('click', () => {
+			goToProjects();
+		});
+	}
 </script>
 
 <Container className={'pt-16 pb-12 md:pt-24 md:pb-24'}>
@@ -26,7 +28,7 @@ import Link from '@/components/Link.astro';
 		<p class="text-typography-secondary mt-2">
 			Showcase software engineering projects and strategic technical leadership delivered.
 		</p>
-		<Button id={'view-projects-button'} variant={'text'} className="hidden shrink-0 md:inline-flex">
+		<Button variant={'text'} className="view-projects-button hidden shrink-0 md:inline-flex">
 			More Projects
 			<span slot="end-icon"><ChevronsRight /></span>
 		</Button>
@@ -82,7 +84,7 @@ import Link from '@/components/Link.astro';
 				</Link>
 			</span>
 		</ProjectItem>
-		<Button id={'view-projects-button'} variant={'text'} className="inline-flex w-full md:hidden">
+		<Button variant={'text'} className="view-projects-button inline-flex w-full md:hidden">
 			More Projects
 			<span slot="end-icon"><ChevronsRight /></span>
 		</Button>
