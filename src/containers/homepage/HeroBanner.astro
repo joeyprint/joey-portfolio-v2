@@ -34,8 +34,8 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
 </script>
 
 <div class="bg-primary-100 w-full pt-12 pb-16 md:pb-24">
-	<Container className="flex flex-col items-center gap-8 md:flex-row">
-		<div class="flex flex-1 shrink-0 flex-col gap-6">
+	<Container className="flex flex-col-reverse items-center gap-8 md:flex-row">
+		<div class="flex flex-1 shrink-0 flex-col gap-4 md:gap-6">
 			<h1 class="joey_subtitle1">Hi, I'm Joey Wasin</h1>
 			<h2 class="joey_heading1 text-primary">Software Engineer & UX Product</h2>
 			<p class="joey_body1">
@@ -60,7 +60,7 @@ const diffYear = differenceInYears(currentDate, startWorkingDate);
 			alt="Joey profile image"
 			class={cn(
 				'flex-1 shrink-0 rounded-xl object-cover md:max-w-[400px] lg:max-w-[584px]',
-				'aspect-(--aspect-ratio-1-1) sm:aspect-(--aspect-ratio-16-9) md:aspect-(--aspect-ratio-1-1) lg:aspect-(--aspect-ratio-16-9)'
+				'aspect-(--aspect-ratio-16-9) md:aspect-(--aspect-ratio-1-1) lg:aspect-(--aspect-ratio-16-9)'
 			)}
 		/>
 	</Container>
