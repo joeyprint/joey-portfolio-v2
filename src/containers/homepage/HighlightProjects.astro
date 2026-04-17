@@ -1,5 +1,5 @@
 ---
-import { ArrowRight } from 'lucide-react';
+import { ChevronsRight } from 'lucide-react';
 import Button from '@/components/Button.astro';
 import Container from '@/components/Container.astro';
 import ProjectItem from '@/components/ProjectItem.astro';
@@ -20,17 +20,15 @@ import Link from '@/components/Link.astro';
 	});
 </script>
 
-<Container className={'mt-16 md:mt-24'}>
+<Container className={'pt-16 pb-12 md:pt-24 md:pb-24'}>
+	<h3 class="joey_heading3">Excellence Projects</h3>
 	<div class="flex items-start justify-between">
-		<div>
-			<h3 class="joey_heading3">Excellence Projects</h3>
-			<p class="joey_body1 text-typography-secondary mt-2">
-				Showcase software engineering projects and strategic technical leadership delivered.
-			</p>
-		</div>
-		<Button id={'view-projects-button'} variant={'text'} class="shrink-0">
+		<p class="text-typography-secondary mt-2">
+			Showcase software engineering projects and strategic technical leadership delivered.
+		</p>
+		<Button id={'view-projects-button'} variant={'text'} className="hidden shrink-0 md:inline-flex">
 			More Projects
-			<span slot="end-icon"><ArrowRight /></span>
+			<span slot="end-icon"><ChevronsRight /></span>
 		</Button>
 	</div>
 	<div class="mt-8 grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -84,5 +82,9 @@ import Link from '@/components/Link.astro';
 				</Link>
 			</span>
 		</ProjectItem>
+		<Button id={'view-projects-button'} variant={'text'} className="inline-flex w-full md:hidden">
+			More Projects
+			<span slot="end-icon"><ChevronsRight /></span>
+		</Button>
 	</div>
 </Container>
