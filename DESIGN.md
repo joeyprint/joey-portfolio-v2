@@ -22,16 +22,16 @@ and the components that consume it. If you change a value here, change it in
 The brand is warm, editorial, and human. The signature color is a muted
 tan/camel ("primary"), paired with cool neutral grays and large, confident
 typography. Marketing voice, from the quote band:
-*"AI moves at the speed of light, but great products move at the pace of the
-human heart."*
+_"AI moves at the speed of light, but great products move at the pace of the
+human heart."_
 
-| Property | Value |
-| --- | --- |
-| Primary brand color | `--color-primary-500` — `hsl(34,33%,55%)` ≈ `#b29166` (camel/tan) |
-| Typeface | **Mulish** (Google Fonts), system-font fallback |
-| Max content width | `1200px` (`Container` component) |
-| Corner radius | base `--radius: 0.625rem` (10px); buttons `rounded-lg`, cards `rounded-xl` |
-| Mode | **Light only** ships today (dark tokens exist but nothing toggles them) |
+| Property            | Value                                                                      |
+| ------------------- | -------------------------------------------------------------------------- |
+| Primary brand color | `--color-primary-500` — `hsl(34,33%,55%)` ≈ `#b29166` (camel/tan)          |
+| Typeface            | **Mulish** (Google Fonts), system-font fallback                            |
+| Max content width   | `1200px` (`Container` component)                                           |
+| Corner radius       | base `--radius: 0.625rem` (10px); buttons `rounded-lg`, cards `rounded-xl` |
+| Mode                | **Light only** ships today (dark tokens exist but nothing toggles them)    |
 
 ---
 
@@ -45,13 +45,13 @@ the browser computed, used to confirm each token is live.
 
 ### 2.1 Primary (brand camel/tan)
 
-| Token | Utility | HSL → hex | Rendered | Usage |
-| --- | --- | --- | --- | --- |
-| `--color-primary-100` | `primary-100` | `hsl(37,33%,95%)` → `#f6f3ee` | `rgb(246,243,238)` | Section backgrounds (hero, contact band), button hover/focus fills, project-card (desktop) |
-| `--color-primary-300` | `primary-300` | `hsl(39,34%,77%)` → `#d8c9a4` | `rgb(216,202,176)` | Quote accent text, hover wash (`primary-300/50`) |
-| `--color-primary-500` | `primary-500` / `primary` | `hsl(34,33%,55%)` → `#b29166` | `rgb(178,145,102)` | **Primary brand color** — solid buttons, links, accents, company-logo hover |
-| `--color-primary-700` | `primary-700` | `hsl(26,33%,40%)` → `#886345` | `rgb(136,98,68)` | Button hover/focus (contained), eyebrow labels |
-| `--color-primary-900` | `primary-900` | `hsl(18,28%,29%)` → `#5f4235` | `rgb(95,66,53)` | Dark brand surfaces (footer, quote band), button active, contact heading |
+| Token                 | Utility                   | HSL → hex                     | Rendered           | Usage                                                                                      |
+| --------------------- | ------------------------- | ----------------------------- | ------------------ | ------------------------------------------------------------------------------------------ |
+| `--color-primary-100` | `primary-100`             | `hsl(37,33%,95%)` → `#f6f3ee` | `rgb(246,243,238)` | Section backgrounds (hero, contact band), button hover/focus fills, project-card (desktop) |
+| `--color-primary-300` | `primary-300`             | `hsl(39,34%,77%)` → `#d8c9a4` | `rgb(216,202,176)` | Quote accent text, hover wash (`primary-300/50`)                                           |
+| `--color-primary-500` | `primary-500` / `primary` | `hsl(34,33%,55%)` → `#b29166` | `rgb(178,145,102)` | **Primary brand color** — solid buttons, links, accents, company-logo hover                |
+| `--color-primary-700` | `primary-700`             | `hsl(26,33%,40%)` → `#886345` | `rgb(136,98,68)`   | Button hover/focus (contained), eyebrow labels                                             |
+| `--color-primary-900` | `primary-900`             | `hsl(18,28%,29%)` → `#5f4235` | `rgb(95,66,53)`    | Dark brand surfaces (footer, quote band), button active, contact heading                   |
 
 The primary ramp deliberately **shifts hue as it darkens** (37° → 18°) so dark
 shades read warmer/browner and light shades read creamier. Keep this hue-shift
@@ -59,32 +59,32 @@ if you extend the ramp.
 
 ### 2.2 Grayscale (cool neutrals)
 
-| Token | Utility | HSL → hex | Usage |
-| --- | --- | --- | --- |
-| `--color-grayscale-50` | `grayscale-50` | `hsl(210,12%,97%)` → `#f6f7f8` | "Mastery Results" section background |
+| Token                   | Utility         | HSL → hex                      | Usage                                                       |
+| ----------------------- | --------------- | ------------------------------ | ----------------------------------------------------------- |
+| `--color-grayscale-50`  | `grayscale-50`  | `hsl(210,12%,97%)` → `#f6f7f8` | "Mastery Results" section background                        |
 | `--color-grayscale-100` | `grayscale-100` | `hsl(216,14%,93%)` → `#ebedf0` | Achievement cards, contact card surface, disabled button bg |
-| `--color-grayscale-200` | `grayscale-200` | `hsl(214,11%,87%)` → `#d9dde2` | — |
-| `--color-grayscale-300` | `grayscale-300` | `hsl(214,15%,85%)` → `#d2d8df` | Disabled outlined-button border |
-| `--color-grayscale-400` | `grayscale-400` | `hsl(205,11%,78%)` → `#c0c7cd` | — |
-| `--color-grayscale-500` | `grayscale-500` | `hsl(210,11%,71%)` → `#aeb6bd` | Disabled button text |
-| `--color-grayscale-600` | `grayscale-600` | `hsl(214,10%,60%)` → `#8d96a1` | — |
-| `--color-grayscale-700` | `grayscale-700` | `hsl(218,9%,53%)` → `#7b828f` | — |
-| `--color-grayscale-800` | `grayscale-800` | `hsl(218,9%,53%)` → `#7b828f` | — (⚠️ duplicate of 700, see §9) |
-| `--color-grayscale-900` | `grayscale-900` | `hsl(222,8%,40%)` → `#5e636d` | Achievement icon chip background |
+| `--color-grayscale-200` | `grayscale-200` | `hsl(214,11%,87%)` → `#d9dde2` | —                                                           |
+| `--color-grayscale-300` | `grayscale-300` | `hsl(214,15%,85%)` → `#d2d8df` | Disabled outlined-button border                             |
+| `--color-grayscale-400` | `grayscale-400` | `hsl(205,11%,78%)` → `#c0c7cd` | —                                                           |
+| `--color-grayscale-500` | `grayscale-500` | `hsl(210,11%,71%)` → `#aeb6bd` | Disabled button text                                        |
+| `--color-grayscale-600` | `grayscale-600` | `hsl(214,10%,60%)` → `#8d96a1` | —                                                           |
+| `--color-grayscale-700` | `grayscale-700` | `hsl(218,9%,53%)` → `#7b828f`  | —                                                           |
+| `--color-grayscale-800` | `grayscale-800` | `hsl(218,9%,53%)` → `#7b828f`  | — (⚠️ duplicate of 700, see §9)                             |
+| `--color-grayscale-900` | `grayscale-900` | `hsl(222,8%,40%)` → `#5e636d`  | Achievement icon chip background                            |
 
 ### 2.3 Typography colors
 
-| Token | Utility | HSL → hex | Usage |
-| --- | --- | --- | --- |
-| `--color-typography-primary` | `text-typography-primary` | `hsl(240,0%,19%)` → `#303030` | **Default body/foreground text** (backs `--foreground`; by far the most-used color, ~80 elements/page) |
-| `--color-typography-secondary` | `text-typography-secondary` | `hsl(240,4%,46%)` → `#717179` | Muted/secondary text (e.g. project section subtitle) |
+| Token                          | Utility                     | HSL → hex                     | Usage                                                                                                  |
+| ------------------------------ | --------------------------- | ----------------------------- | ------------------------------------------------------------------------------------------------------ |
+| `--color-typography-primary`   | `text-typography-primary`   | `hsl(240,0%,19%)` → `#303030` | **Default body/foreground text** (backs `--foreground`; by far the most-used color, ~80 elements/page) |
+| `--color-typography-secondary` | `text-typography-secondary` | `hsl(240,4%,46%)` → `#717179` | Muted/secondary text (e.g. project section subtitle)                                                   |
 
 ### 2.4 Common
 
-| Token | Utility | HSL → hex | Usage |
-| --- | --- | --- | --- |
-| `--color-common-white` | `common-white` | `hsl(0,0%,100%)` → `#ffffff` | Text on dark/brand surfaces, card fills |
-| `--color-common-black` | `common-black` | `hsl(240,10%,14%)` → `#202027` | — (defined, not used in UI) |
+| Token                  | Utility        | HSL → hex                      | Usage                                   |
+| ---------------------- | -------------- | ------------------------------ | --------------------------------------- |
+| `--color-common-white` | `common-white` | `hsl(0,0%,100%)` → `#ffffff`   | Text on dark/brand surfaces, card fills |
+| `--color-common-black` | `common-black` | `hsl(240,10%,14%)` → `#202027` | — (defined, not used in UI)             |
 
 ### 2.5 Semantic / shadcn aliases
 
@@ -93,16 +93,16 @@ neutral OKLCH values. Most of the visible site uses the brand tokens above; thes
 aliases back the `bg-background`, `text-foreground`, `border-border`, `ring`,
 etc. utilities (the `body` is `bg-background text-foreground`).
 
-| Alias | Light | Dark | Notes |
-| --- | --- | --- | --- |
-| `--background` | `#ffffff` | `oklch(0.145 0 0)` | Page background |
-| `--foreground` | `--color-typography-primary` (`#303030`) | `oklch(0.985 0 0)` | Default text |
-| `--primary` | `--color-primary-500` (tan) | `oklch(0.922 0 0)` | Powers `bg-primary`/`text-primary`; **note it becomes near-white in dark, not tan** |
-| `--card` / `--popover` | `oklch(1 0 0)` | `oklch(0.205 0 0)` | Surfaces |
-| `--border` / `--input` | `oklch(0.922 0 0)` | `oklch(1 0 0 / 10–15%)` | Hairlines |
-| `--ring` | `oklch(0.708 0 0)` | `oklch(0.556 0 0)` | Focus ring |
-| `--destructive` | `oklch(0.577 0.245 27.325)` | `oklch(0.704 0.191 22.216)` | Error/red (defined, not yet used) |
-| `--chart-1…5`, `--sidebar-*` | see `global.css` | distinct dark set | Unused by the portfolio UI |
+| Alias                        | Light                                    | Dark                        | Notes                                                                               |
+| ---------------------------- | ---------------------------------------- | --------------------------- | ----------------------------------------------------------------------------------- |
+| `--background`               | `#ffffff`                                | `oklch(0.145 0 0)`          | Page background                                                                     |
+| `--foreground`               | `--color-typography-primary` (`#303030`) | `oklch(0.985 0 0)`          | Default text                                                                        |
+| `--primary`                  | `--color-primary-500` (tan)              | `oklch(0.922 0 0)`          | Powers `bg-primary`/`text-primary`; **note it becomes near-white in dark, not tan** |
+| `--card` / `--popover`       | `oklch(1 0 0)`                           | `oklch(0.205 0 0)`          | Surfaces                                                                            |
+| `--border` / `--input`       | `oklch(0.922 0 0)`                       | `oklch(1 0 0 / 10–15%)`     | Hairlines                                                                           |
+| `--ring`                     | `oklch(0.708 0 0)`                       | `oklch(0.556 0 0)`          | Focus ring                                                                          |
+| `--destructive`              | `oklch(0.577 0.245 27.325)`              | `oklch(0.704 0.191 22.216)` | Error/red (defined, not yet used)                                                   |
+| `--chart-1…5`, `--sidebar-*` | see `global.css`                         | distinct dark set           | Unused by the portfolio UI                                                          |
 
 > **Dark mode:** a full `.dark` token set exists (via the `.dark` class /
 > `@custom-variant dark`), but the site **ships light-mode only** — there is no
@@ -124,17 +124,17 @@ etc. utilities (the `body` is `bg-background text-foreground`).
 
 ### 3.2 Type scale (font sizes)
 
-| Token | rem | px | Utility |
-| --- | --- | --- | --- |
-| `--font-size-caption` | 0.75 | 12 | `text-caption` |
-| `--font-size-body2` | 0.875 | 14 | `text-body2` |
-| `--font-size-body1` | 1 | 16 | `text-body1` |
-| `--font-size-subtitle2` | 1.25 | 20 | `text-subtitle2` |
-| `--font-size-subtitle1` | 1.5 | 24 | `text-subtitle1` |
-| `--font-size-heading3` | 1.75 | 28 | `text-heading3` |
-| `--font-size-heading2` | 2 | 32 | `text-heading2` |
-| `--font-size-heading1` | 2.25 | 36 | `text-heading1` |
-| `--font-size-quote` | 3 | 48 | `text-quote` |
+| Token                   | rem   | px  | Utility          |
+| ----------------------- | ----- | --- | ---------------- |
+| `--font-size-caption`   | 0.75  | 12  | `text-caption`   |
+| `--font-size-body2`     | 0.875 | 14  | `text-body2`     |
+| `--font-size-body1`     | 1     | 16  | `text-body1`     |
+| `--font-size-subtitle2` | 1.25  | 20  | `text-subtitle2` |
+| `--font-size-subtitle1` | 1.5   | 24  | `text-subtitle1` |
+| `--font-size-heading3`  | 1.75  | 28  | `text-heading3`  |
+| `--font-size-heading2`  | 2     | 32  | `text-heading2`  |
+| `--font-size-heading1`  | 2.25  | 36  | `text-heading1`  |
+| `--font-size-quote`     | 3     | 48  | `text-quote`     |
 
 ### 3.3 Weights & line heights
 
@@ -148,24 +148,25 @@ Style text with these composite utility classes (defined in `global.css`
 `@layer base`), **not** raw font utilities — each bundles size + weight +
 line-height.
 
-| Class | Size | Weight | Line-height | Typical use |
-| --- | --- | --- | --- | --- |
-| `.joey_quote` | 48px | Bold | 125% | Large quote / hero statement (contact heading, quote band) |
-| `.joey_heading1` | 36px | Bold | 125% | Page-level H1 / hero headline |
-| `.joey_heading2` | 32px | Bold | 125% | Section titles ("Mastery Results") |
-| `.joey_heading3` | 28px | Bold | 125% | Sub-section titles ("Excellence Projects", "My Projects") |
-| `.joey_subtitle1` | 24px | Regular | 145% | Hero greeting line |
-| `.joey_subtitle2_bold` | 20px | Bold | 145% | Card titles (achievement, project) |
-| `.joey_subtitle2` | 20px | Regular | 145% | — |
-| `.joey_body1_bold` | 16px | Bold | 150% | Emphasized links (contact channels) |
-| `.joey_body1` | 16px | Regular | 150% | Default body copy, links |
-| `.joey_body2_bold` | 14px | Bold | 150% | Eyebrow labels (uppercase + tracking) |
-| `.joey_body2` | 14px | Regular | 150% | Small body copy |
-| `.joey_caption_bold` | 12px | Bold | 150% | — |
-| `.joey_caption` | 12px | Regular | 150% | Footer copyright, fine print |
-| `.joey_button` | 16px | Regular | 150% | Button label (used internally by `Button`) |
+| Class                  | Size | Weight  | Line-height | Typical use                                                |
+| ---------------------- | ---- | ------- | ----------- | ---------------------------------------------------------- |
+| `.joey_quote`          | 48px | Bold    | 125%        | Large quote / hero statement (contact heading, quote band) |
+| `.joey_heading1`       | 36px | Bold    | 125%        | Page-level H1 / hero headline                              |
+| `.joey_heading2`       | 32px | Bold    | 125%        | Section titles ("Mastery Results")                         |
+| `.joey_heading3`       | 28px | Bold    | 125%        | Sub-section titles ("Excellence Projects", "My Projects")  |
+| `.joey_subtitle1`      | 24px | Regular | 145%        | Hero greeting line                                         |
+| `.joey_subtitle2_bold` | 20px | Bold    | 145%        | Card titles (achievement, project)                         |
+| `.joey_subtitle2`      | 20px | Regular | 145%        | —                                                          |
+| `.joey_body1_bold`     | 16px | Bold    | 150%        | Emphasized links (contact channels)                        |
+| `.joey_body1`          | 16px | Regular | 150%        | Default body copy, links                                   |
+| `.joey_body2_bold`     | 14px | Bold    | 150%        | Eyebrow labels (uppercase + tracking)                      |
+| `.joey_body2`          | 14px | Regular | 150%        | Small body copy                                            |
+| `.joey_caption_bold`   | 12px | Bold    | 150%        | —                                                          |
+| `.joey_caption`        | 12px | Regular | 150%        | Footer copyright, fine print                               |
+| `.joey_button`         | 16px | Regular | 150%        | Button label (used internally by `Button`)                 |
 
 **Patterns seen in code:**
+
 - **Responsive type swap:** `joey_heading1 md:joey_quote` (quote scales up on
   desktop), `joey_caption md:joey_body1` (footer).
 - **Eyebrow label:** small bold uppercase, wide tracking —
@@ -184,8 +185,8 @@ own background, then place a `Container` inside for content.
 
 ### 4.2 Custom spacing tokens
 
-| Token | Value | Usage |
-| --- | --- | --- |
+| Token             | Value            | Usage                                                     |
+| ----------------- | ---------------- | --------------------------------------------------------- |
 | `--appbar-height` | `4.25rem` (68px) | Fixed top app-bar height; the `Toolbar` spacer matches it |
 
 Everything else uses Tailwind's default spacing scale (`gap-4`, `py-12`, `mt-8`,
@@ -194,11 +195,11 @@ Everything else uses Tailwind's default spacing scale (`gap-4`, `py-12`, `mt-8`,
 ### 4.3 Responsive breakpoints (Tailwind defaults)
 
 | Prefix | Min width |
-| --- | --- |
-| `sm` | 640px |
-| `md` | 768px |
-| `lg` | 1024px |
-| `xl` | 1280px |
+| ------ | --------- |
+| `sm`   | 640px     |
+| `md`   | 768px     |
+| `lg`   | 1024px    |
+| `xl`   | 1280px    |
 
 **Primary layout breakpoint is `md` (768px)** — the site flips between mobile and
 desktop here (nav collapses to a hamburger, hero stacks, project cards swap
@@ -212,10 +213,10 @@ gap is `mt-1`; title → content grid is `mt-8`.
 
 ### 4.5 Aspect ratios
 
-| Token | Value | Usage |
-| --- | --- | --- |
-| `--aspect-ratio-1-1` | `1 / 1` | Square profile image (desktop `md`) |
-| `--aspect-ratio-16-9` | `16 / 9` | Hero image, project thumbnails |
+| Token                 | Value    | Usage                               |
+| --------------------- | -------- | ----------------------------------- |
+| `--aspect-ratio-1-1`  | `1 / 1`  | Square profile image (desktop `md`) |
+| `--aspect-ratio-16-9` | `16 / 9` | Hero image, project thumbnails      |
 
 Apply via `aspect-(--aspect-ratio-16-9)`.
 
@@ -227,25 +228,25 @@ Apply via `aspect-(--aspect-ratio-16-9)`.
 
 Base `--radius: 0.625rem` (10px); the scale derives from it.
 
-| Token | Value | Utility | Usage |
-| --- | --- | --- | --- |
-| `--radius-sm` | 6px | `rounded-sm` | Project image (desktop) |
-| `--radius-md` | 8px | `rounded-md` | Project card (mobile) |
-| `--radius-lg` | 10px | `rounded-lg` | **Buttons** |
-| `--radius-xl` | 14px | `rounded-xl` | **Cards** (achievement, company box), icon buttons |
-| — | 16px | `rounded-2xl` | Contact card surface |
-| — | pill | `rounded-full` | Quote underline bar, avatars/badges |
+| Token         | Value | Utility        | Usage                                              |
+| ------------- | ----- | -------------- | -------------------------------------------------- |
+| `--radius-sm` | 6px   | `rounded-sm`   | Project image (desktop)                            |
+| `--radius-md` | 8px   | `rounded-md`   | Project card (mobile)                              |
+| `--radius-lg` | 10px  | `rounded-lg`   | **Buttons**                                        |
+| `--radius-xl` | 14px  | `rounded-xl`   | **Cards** (achievement, company box), icon buttons |
+| —             | 16px  | `rounded-2xl`  | Contact card surface                               |
+| —             | pill  | `rounded-full` | Quote underline bar, avatars/badges                |
 
 Convention: **buttons = `rounded-lg`, cards = `rounded-xl`, large feature
 surfaces = `rounded-2xl`.**
 
 ### 5.2 Shadows
 
-| Token | Value | Utility | Usage |
-| --- | --- | --- | --- |
-| `--shadow-image` | `0 4px 5px rgba(0,0,0,0.25)` | `shadow-image` | Project screenshot images (most common in render) |
-| `--shadow-card` | `0 4px 10px rgba(0,0,0,0.12)` | `shadow-card` | Project card (mobile) — defined but barely observed; verify before relying on it (§9) |
-| Tailwind `shadow-xs` | `0 1px 2px rgba(0,0,0,0.05)` | `shadow-xs` | Buttons, small surfaces |
+| Token                | Value                         | Utility        | Usage                                                                                 |
+| -------------------- | ----------------------------- | -------------- | ------------------------------------------------------------------------------------- |
+| `--shadow-image`     | `0 4px 5px rgba(0,0,0,0.25)`  | `shadow-image` | Project screenshot images (most common in render)                                     |
+| `--shadow-card`      | `0 4px 10px rgba(0,0,0,0.12)` | `shadow-card`  | Project card (mobile) — defined but barely observed; verify before relying on it (§9) |
+| Tailwind `shadow-xs` | `0 1px 2px rgba(0,0,0,0.05)`  | `shadow-xs`    | Buttons, small surfaces                                                               |
 
 ---
 
@@ -256,11 +257,11 @@ All components live in `src/components/`; section compositions live in
 
 ### 6.1 Button (`Button.astro`)
 
-| Prop | Values | Default |
-| --- | --- | --- |
+| Prop      | Values                          | Default     |
+| --------- | ------------------------------- | ----------- |
 | `variant` | `contained`, `outlined`, `text` | `contained` |
-| `color` | `primary` | `primary` |
-| `size` | `medium` | `medium` |
+| `color`   | `primary`                       | `primary`   |
+| `size`    | `medium`                        | `medium`    |
 
 - Base: `joey_button rounded-lg px-3 py-2 gap-1`, `inline-flex` centered, 300ms transitions.
 - **Contained primary:** `bg-primary text-common-white` → hover/focus `primary-700` → active `primary-900`.
@@ -295,6 +296,7 @@ in a `grayscale-900` chip (`p-1.5`, white icon, via the `icon` slot). Title =
 
 Props `name`, `imageUrl`, plus a `project-description` slot. Two distinct layouts
 swapped at `md`:
+
 - **Mobile (`md:hidden`):** white card, `shadow-card rounded-md`, 16:9 image on top, text below.
 - **Desktop (`hidden md:flex`):** `bg-primary-100` (hover `primary-300/50`), centered title on top, image anchored at the bottom with `shadow-image rounded-sm`, capped `max-h-[360px]`.
 
@@ -319,6 +321,61 @@ Page-width wrapper: `max-w-[1200px] mx-auto px-4`. Props `className`, `fluid`.
   social icon links (Medium / LinkedIn / GitHub) right.
 - **Toolbar (`Toolbar.astro`):** a spacer equal to the app-bar height so the
   fixed Appbar doesn't overlap content. (It is **not** a theme toggle.)
+
+### 6.9 Tag (`Tag.astro`)
+
+Pill label used to categorise cards.
+
+| Prop           | Type      | Notes             |
+| -------------- | --------- | ----------------- |
+| `class`        | `string?` | Merged via `cn()` |
+| (default slot) | content   | Tag text          |
+
+Base classes: `joey_caption font-semibold text-primary-900 bg-white border border-primary-300/70 rounded-full px-3 py-1 inline-flex`
+
+### 6.10 LiveBadge (`LiveBadge.astro`)
+
+Pulsing green-dot badge signalling a live playground link.
+
+| Prop    | Type      | Default             |
+| ------- | --------- | ------------------- |
+| `text`  | `string?` | `'Live playground'` |
+| `class` | `string?` | —                   |
+
+The pulse keyframe is scoped inside the component (`<style>`). Animation is suppressed under `prefers-reduced-motion`. Dot: 8×8 px circle, `bg-primary-500`, `box-shadow` ripple at 2.2 s.
+
+### 6.11 WorkCard (`WorkCard.astro`)
+
+16:9 thumbnail card that lifts on hover. Used in a grid on the Projects page.
+
+| Prop          | Type                 | Notes                                                                                |
+| ------------- | -------------------- | ------------------------------------------------------------------------------------ |
+| `title`       | `string`             | Card heading                                                                         |
+| `description` | `string`             | Body copy                                                                            |
+| `category`    | `string`             | Pill badge top-right of thumbnail                                                    |
+| `mark`        | `string`             | Short text (e.g. `"SET"`) **or** image URL — auto-detected by prefix (`/` or `http`) |
+| `tint`        | `'a'\|'b'\|'c'\|'d'` | Thumbnail bg when no `imageUrl` — a=cream, b=mid-tan, c=dark, d=cool gray            |
+| `imageUrl`    | `string?`            | Real screenshot; `object-cover object-top`                                           |
+| `tags`        | `string[]?`          | Rendered as `<Tag>` pills                                                            |
+
+Hover: `hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-card` (300 ms).
+Mark badge: `bg-primary-900 text-primary-100 rounded-lg shadow-[0_0_0_4px_white,var(--shadow-xs)]`.
+
+### 6.12 SideProjectCard (`SideProjectCard.astro`)
+
+Full showcase card — the entire element is an `<a target="_blank">`. Used for side projects with a live playground.
+
+| Prop          | Type        | Notes                                   |
+| ------------- | ----------- | --------------------------------------- |
+| `title`       | `string`    | Card heading                            |
+| `description` | `string`    | Body copy (max ~46 ch)                  |
+| `href`        | `string`    | Playground URL                          |
+| `tags`        | `string[]?` | Rendered as `<Tag>` pills               |
+| `linkText`    | `string?`   | CTA label, default `'Visit playground'` |
+
+Slot: `thumbnail` — caller provides arbitrary content (image, SVG art, etc.) that bleeds off the bottom edge (`rounded-t-sm shadow-image`).
+Composes `<LiveBadge>` and `<Tag>` internally.
+Hover: background `bg-primary-100 → bg-primary-300/50`; arrow nudge `gap-[6px] → gap-[11px]` (250 ms, uses `group`/`group-hover`).
 
 ---
 
