@@ -1,0 +1,85 @@
+---
+import { cn } from '@/lib/utils';
+import Tag from '@/components/Tag.astro';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'article'> {
+	title: string;
+	description: string;
+	category: string;
+	mark: string;
+	tint?: 'a' | 'b' | 'c' | 'd';
+	imageUrl?: string;
+	tags?: string[];
+	class?: string;
+}
+
+const {
+	title,
+	description,
+	category,
+	mark,
+	tint = 'a',
+	imageUrl,
+	tags = [],
+	class: className,
+	...restProps
+} = Astro.props;
+
+const tintClasses: Record<string, string> = {
+	a: 'bg-primary-100 text-primary-700',
+	b: 'bg-primary-300/45 text-primary-900',
+	c: 'bg-primary-900 text-primary-100',
+	d: 'bg-grayscale-100 text-grayscale-900'
+};
+
+const isImageMark = mark.startsWith('/') || mark.startsWith('http');
+---
+
+<article
+	{...restProps}
+	class={cn(
+		'flex flex-col overflow-hidden rounded-xl border border-border bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-card',
+		className
+	)}
+>
+	<!-- Thumbnail -->
+	<div
+		class={cn('relative border-b border-border', 'aspect-(--aspect-ratio-16-9)', tintClasses[tint])}
+	>
+		{
+			imageUrl ? (
+				<img src={imageUrl} alt={title} class="h-full w-full object-cover object-top" />
+			) : null
+		}
+
+		<!-- Category pill -->
+		<span
+			class="text-primary-900 absolute top-3 right-3 rounded-full bg-white/80 px-[10px] py-1 text-[11px] font-bold tracking-[0.1em] uppercase backdrop-blur-sm"
+		>
+			{category}
+		</span>
+
+		<!-- Mark badge -->
+		<div
+			class="bg-primary-900 text-primary-100 absolute top-3 left-3 z-[2] flex h-11 w-11 items-center justify-center rounded-lg text-sm font-bold tracking-[0.02em] shadow-[0_0_0_4px_white,var(--shadow-xs)]"
+		>
+			{isImageMark ? <img src={mark} alt="" class="h-full w-full rounded-lg object-cover" /> : mark}
+		</div>
+	</div>
+
+	<!-- Body -->
+	<div class="flex flex-1 flex-col p-[22px]">
+		<h3 class="joey_subtitle2_bold">{title}</h3>
+		<p class="joey_body2 text-typography-secondary mt-2 flex-1">{description}</p>
+		{
+			tags.length > 0 && (
+				<div class="mt-4 flex flex-wrap gap-2">
+					{tags.map((tag) => (
+						<Tag>{tag}</Tag>
+					))}
+				</div>
+			)
+		}
+	</div>
+</article>
