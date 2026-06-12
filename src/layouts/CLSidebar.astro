@@ -1,5 +1,42 @@
+---
+import { cn } from '@/lib/utils';
+
+const foundations: { href: string; title: string }[] = [
+	{ href: '#colors', title: 'Color tokens' },
+	{ href: '#type', title: 'Typography' },
+	{ href: '#radii', title: 'Radii & shadows' },
+	{ href: '#motion', title: 'Motion' }
+];
+
+const components: { href: string; title: string }[] = [
+	{ href: '#buttons', title: 'Buttons' },
+	{ href: '#iconbutton', title: 'Icon button' },
+	{ href: '#tag', title: 'Tag' },
+	{ href: '#livebadge', title: 'Live badge' },
+	{ href: '#workcard', title: 'Work card' },
+	{ href: '#sidecard', title: 'Side-project card' },
+	{ href: '#projectitem', title: 'Project item' },
+	{ href: '#achievement', title: 'Achievement' }
+];
+
+const linkClass = cn(
+	'cl-link joey_body2 rounded-lg text-[hsl(34,20%,90%)] opacity-80',
+	'px-2 py-1 lg:block lg:px-2.5 lg:py-2',
+	'transition-[background,opacity] duration-200',
+	'hover:bg-white/[0.08] hover:opacity-100',
+	'[&.active]:bg-primary-500 [&.active]:text-white [&.active]:opacity-100'
+);
+---
+
 <nav
-	class="flex flex-wrap items-center gap-x-[22px] gap-y-2 border-r border-[hsl(20,12%,22%)] bg-[hsl(20,16%,16%)] px-6 py-4 text-[hsl(34,20%,90%)] lg:sticky lg:top-[var(--appbar-height)] lg:h-[calc(100vh-var(--appbar-height))] lg:flex-col lg:flex-nowrap lg:items-stretch lg:gap-0 lg:overflow-y-auto lg:px-5 lg:pt-7 lg:pb-10"
+	class={cn(
+		'flex flex-wrap items-center gap-x-[22px] gap-y-2',
+		'border-r border-[hsl(20,12%,22%)] bg-[hsl(20,16%,16%)] text-[hsl(34,20%,90%)]',
+		'px-6 py-4',
+		'lg:sticky lg:top-[var(--appbar-height)] lg:h-[calc(100vh-var(--appbar-height))]',
+		'lg:flex-col lg:flex-nowrap lg:items-stretch lg:gap-0 lg:overflow-y-auto',
+		'lg:px-5 lg:pt-7 lg:pb-10'
+	)}
 >
 	<div>
 		<span class="joey_subtitle2_bold">Projects<span class="text-primary-500">.</span>UI</span>
@@ -8,67 +45,39 @@
 		</p>
 	</div>
 
-	<div class="mt-2 flex items-center gap-1 lg:mt-7 lg:block">
+	<div class={cn('mt-2 flex items-center gap-1 lg:mt-7 lg:block')}>
 		<h4
-			class="joey_caption_bold mr-2 tracking-[0.2em] text-[hsl(34,10%,62%)] uppercase lg:mr-0 lg:mb-[10px]"
+			class={cn(
+				'joey_caption_bold tracking-[0.2em] text-[hsl(34,10%,62%)] uppercase',
+				'mr-2 lg:mr-0 lg:mb-[10px]'
+			)}
 		>
 			Foundations
 		</h4>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#colors">Color tokens</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#type">Typography</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#radii">Radii &amp; shadows</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#motion">Motion</a
-		>
+		{
+			foundations.map((item) => (
+				<a class={linkClass} href={item.href}>
+					{item.title}
+				</a>
+			))
+		}
 	</div>
 
-	<div class="mt-2 flex items-center gap-1 lg:mt-7 lg:block">
+	<div class={cn('mt-2 flex items-center gap-1 lg:mt-7 lg:block')}>
 		<h4
-			class="joey_caption_bold mr-2 tracking-[0.2em] text-[hsl(34,10%,62%)] uppercase lg:mr-0 lg:mb-[10px]"
+			class={cn(
+				'joey_caption_bold tracking-[0.2em] text-[hsl(34,10%,62%)] uppercase',
+				'mr-2 lg:mr-0 lg:mb-[10px]'
+			)}
 		>
 			Components
 		</h4>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#buttons">Buttons</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#iconbutton">Icon button</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#tag">Tag</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#livebadge">Live badge</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#workcard">Work card</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#sidecard">Side-project card</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#projectitem">Project item</a
-		>
-		<a
-			class="cl-link joey_body2 [&.active]:bg-primary-500 rounded-lg px-2 py-1 text-[hsl(34,20%,90%)] opacity-80 transition-[background,opacity] duration-200 hover:bg-white/[0.08] hover:opacity-100 lg:block lg:px-2.5 lg:py-2 [&.active]:text-white [&.active]:opacity-100"
-			href="#achievement">Achievement</a
-		>
+		{
+			components.map((item) => (
+				<a class={linkClass} href={item.href}>
+					{item.title}
+				</a>
+			))
+		}
 	</div>
 </nav>
