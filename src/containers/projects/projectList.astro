@@ -2,8 +2,13 @@
 import Container from '@/components/Container.astro';
 import WorkCard from '@/components/WorkCard.astro';
 import type { ComponentProps } from 'astro/types';
+import { getDeviceOS } from '@/lib/devices';
 
 type WorkProject = ComponentProps<typeof WorkCard> & { title: string };
+
+const os = getDeviceOS();
+const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.skooldio.tcaster&hl=en';
+const appStoreUrl = 'https://apps.apple.com/th/app/tcaster/id1267234768?l=th';
 
 const workProjects: WorkProject[] = [
 	{
@@ -36,7 +41,7 @@ const workProjects: WorkProject[] = [
 		mark: 'TC',
 		markColor: 'primary-700',
 		tags: ['Development', 'iOS', 'Android'],
-		linkUrl: 'https://apps.apple.com/th/app/tcaster/id1267234768?l=th'
+		linkUrl: os === 'Android' || os === 'Windows' ? playStoreUrl : appStoreUrl
 	},
 	{
 		title: 'TCASter ExamHub',
