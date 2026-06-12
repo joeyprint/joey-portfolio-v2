@@ -7,8 +7,7 @@ interface Props extends HTMLAttributes<'article'> {
 	title: string;
 	description: string;
 	category: string;
-	mark: string;
-	markColor?: 'primary-500' | 'primary-700' | 'primary-900';
+	mark?: string;
 	imageUrl?: string;
 	tags?: string[];
 	linkUrl?: string;
@@ -20,7 +19,6 @@ const {
 	description,
 	category,
 	mark,
-	markColor = 'primary-900',
 	imageUrl,
 	tags = [],
 	linkUrl,
@@ -30,14 +28,6 @@ const {
 
 const CardWrapper = linkUrl ? 'a' : 'article';
 const cardWrapperProps = linkUrl ? { href: linkUrl, target: '_blank' } : {};
-
-const markColorClasses: Record<string, string> = {
-	'primary-500': 'bg-primary-500 text-primary-100',
-	'primary-700': 'bg-primary-700 text-primary-100',
-	'primary-900': 'bg-primary-900 text-primary-100'
-};
-
-const isImageMark = mark.startsWith('/') || mark.startsWith('http');
 ---
 
 <CardWrapper
@@ -66,18 +56,20 @@ const isImageMark = mark.startsWith('/') || mark.startsWith('http');
 			{category}
 		</span>
 
-		<!-- Mark badge -->
-		<div
-			class={cn(
-				'absolute top-3 left-3 z-2',
-				'flex items-center justify-center h-11 w-11 ',
-				'joey_body2_bold',
-				'rounded-lg shadow-[0_0_0_4px_white,var(--shadow-xs)]',
-				markColorClasses[markColor]
-			)}
-		>
-			{isImageMark ? <img src={mark} alt="" class="h-full w-full rounded-lg object-cover" /> : mark}
-		</div>
+		{
+			mark && (
+				<div
+					class={cn(
+						'absolute top-3 left-3 z-2',
+						'flex h-11 w-11 items-center justify-center',
+						'joey_body2_bold',
+						'rounded-lg shadow-[0_0_0_4px_white,var(--shadow-xs)]'
+					)}
+				>
+					<img src={mark} class="h-full w-full rounded-lg object-cover" />
+				</div>
+			)
+		}
 	</div>
 
 	<div class="flex flex-1 flex-col p-6">
