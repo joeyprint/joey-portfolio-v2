@@ -1,0 +1,75 @@
+---
+import Container from '@/components/Container.astro';
+import SideProjectCard from '@/components/SideProjectCard.astro';
+---
+
+<section id="side-projects" class="bg-grayscale-50 py-16">
+	<Container>
+		<div>
+			<p class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">From my playground</p>
+			<h2 class="joey_heading2 mt-1.5">Side projects</h2>
+			<p class="joey_body1 text-typography-secondary mt-2.5">
+				Things I build on my own time. Each one links to its live playground.
+			</p>
+		</div>
+		<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			<SideProjectCard
+				title="Barcode Generator Website"
+				description="A fast, browser-based tool to generate and download barcodes — pick a symbology, type your value, export. Built to scratch my own itch."
+				href="https://labs.generate-barcode.wasin.dev/"
+				tags={['Side project', 'Web tool', 'Barcodes']}
+			>
+				<div slot="thumbnail" class="bg-primary-900 flex h-full w-full items-center justify-center">
+					<svg viewBox="0 0 320 120" role="img" aria-label="Barcode illustration" class="w-[78%]">
+						<g fill="#f6f3ee">
+							<rect x="10" y="14" width="4" height="74"></rect>
+							<rect x="18" y="14" width="2" height="74"></rect>
+							<rect x="24" y="14" width="6" height="74"></rect>
+							<rect x="34" y="14" width="3" height="74"></rect>
+							<rect x="41" y="14" width="8" height="74"></rect>
+							<rect x="53" y="14" width="2" height="74"></rect>
+							<rect x="59" y="14" width="5" height="74"></rect>
+							<rect x="68" y="14" width="3" height="74"></rect>
+							<rect x="75" y="14" width="7" height="74"></rect>
+							<rect x="86" y="14" width="2" height="74"></rect>
+							<rect x="92" y="14" width="4" height="74"></rect>
+							<rect x="100" y="14" width="6" height="74"></rect>
+							<rect x="110" y="14" width="2" height="74"></rect>
+							<rect x="116" y="14" width="5" height="74"></rect>
+							<rect x="125" y="14" width="3" height="74"></rect>
+							<rect x="132" y="14" width="8" height="74"></rect>
+							<rect x="144" y="14" width="2" height="74"></rect>
+							<rect x="150" y="14" width="4" height="74"></rect>
+							<rect x="158" y="14" width="6" height="74"></rect>
+							<rect x="168" y="14" width="3" height="74"></rect>
+							<rect x="175" y="14" width="7" height="74"></rect>
+							<rect x="186" y="14" width="2" height="74"></rect>
+							<rect x="192" y="14" width="5" height="74"></rect>
+							<rect x="201" y="14" width="3" height="74"></rect>
+							<rect x="208" y="14" width="8" height="74"></rect>
+							<rect x="220" y="14" width="2" height="74"></rect>
+							<rect x="226" y="14" width="4" height="74"></rect>
+							<rect x="234" y="14" width="6" height="74"></rect>
+							<rect x="244" y="14" width="3" height="74"></rect>
+							<rect x="251" y="14" width="7" height="74"></rect>
+							<rect x="262" y="14" width="2" height="74"></rect>
+							<rect x="268" y="14" width="5" height="74"></rect>
+							<rect x="277" y="14" width="3" height="74"></rect>
+							<rect x="284" y="14" width="8" height="74"></rect>
+							<rect x="296" y="14" width="2" height="74"></rect>
+							<rect x="302" y="14" width="4" height="74"></rect>
+						</g>
+						<text
+							x="160"
+							y="106"
+							text-anchor="middle"
+							style="fill: var(--color-primary-300); font-family: var(--font-display); font-size: 9px; letter-spacing: 0.32em;"
+						>
+							GENERATE-BARCODE.WASIN.DEV
+						</text>
+					</svg>
+				</div>
+			</SideProjectCard>
+		</div>
+	</Container>
+</section>

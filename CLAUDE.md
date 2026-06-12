@@ -59,3 +59,8 @@ The `@astrojs/react` integration and React 19 are installed (and some libraries 
 ### Prettier config
 
 Uses tabs, single quotes, no trailing commas, 100-char print width. Plugins: `prettier-plugin-astro` and `prettier-plugin-tailwindcss`.
+
+### Code conventions
+
+- **File length:** keep each file under 150 lines where possible.
+- **Variable names:** never use single-letter or abbreviated names — write `event` not `e`, `project` not `p`, `index` not `i`.
