@@ -9,7 +9,6 @@ interface Props extends HTMLAttributes<'article'> {
 	category: string;
 	mark: string;
 	markColor?: 'primary-500' | 'primary-700' | 'primary-900';
-	tint?: 'a' | 'b' | 'c' | 'd';
 	imageUrl?: string;
 	tags?: string[];
 	class?: string;
@@ -21,19 +20,11 @@ const {
 	category,
 	mark,
 	markColor = 'primary-900',
-	tint = 'a',
 	imageUrl,
 	tags = [],
 	class: className,
 	...restProps
 } = Astro.props;
-
-const tintClasses: Record<string, string> = {
-	a: 'bg-primary-100 text-primary-700',
-	b: 'bg-primary-300/45 text-primary-900',
-	c: 'bg-primary-900 text-primary-100',
-	d: 'bg-grayscale-100 text-grayscale-900'
-};
 
 const markColorClasses: Record<string, string> = {
 	'primary-500': 'bg-primary-500 text-primary-100',
@@ -53,19 +44,12 @@ const isImageMark = mark.startsWith('/') || mark.startsWith('http');
 		className
 	)}
 >
-	<div
-		class={cn('relative border-b border-border', 'aspect-(--aspect-ratio-16-9)', tintClasses[tint])}
-	>
-		{
-			imageUrl && (
-				<img
-					src={imageUrl}
-					alt={title}
-					class="aspect-(--aspect-ratio-16-9) h-full w-full object-cover object-top"
-				/>
-			)
-		}
-
+	<div class={cn('relative border-b border-border', 'aspect-(--aspect-ratio-16-9)')}>
+		<img
+			src={imageUrl ?? 'assets/projects/default-project-image.png'}
+			alt={title}
+			class="aspect-(--aspect-ratio-16-9) h-full w-full object-cover object-top"
+		/>
 		<span
 			class={cn(
 				'absolute top-3 right-3',

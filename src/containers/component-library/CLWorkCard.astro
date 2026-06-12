@@ -6,10 +6,8 @@ const snippet = `<WorkCard
   description="Short project description here."
   category="Website"
   mark="AB"
-  tint="c"
   tags={['Product', 'Category']}
 />
-<!-- tint: 'a' cream | 'b' tan | 'c' dark | 'd' gray -->
 <!-- imageUrl: replaces the tint bg with a real screenshot -->
 <!-- mark: short text OR image URL (auto-detected) -->`;
 ---
@@ -19,48 +17,23 @@ const snippet = `<WorkCard
 		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Component</span>
 		<h2>Work card</h2>
 		<p>
-			16:9 thumbnail card that lifts on hover. Four tint variants rotate for visual rhythm. The
-			<code>mark</code> prop accepts short text (e.g. <code>"SET"</code>) or an image URL. Pass
+			16:9 thumbnail card that lifts on hover. The <code>mark</code> prop accepts short text (e.g. <code
+				>"SET"</code
+			>) or an image URL. Pass
 			<code>imageUrl</code> to replace the tint with a real screenshot.
 		</p>
 	</header>
 
 	<div class="sg-block">
-		<div class="sg-block-title">All tints</div>
 		<div class="sg-spec">
 			<div class="sg-stage plain">
 				<div class="grid w-full grid-cols-2 gap-5">
 					<WorkCard
-						title="Tint A — Cream"
-						description="Primary-100 background, primary-700 text."
+						title="Project Name"
+						description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec suscipit auctor dui, at volutpat."
 						category="Website"
-						mark="AA"
-						tint="a"
-						tags={['tint-a']}
-					/>
-					<WorkCard
-						title="Tint B — Mid tan"
-						description="Primary-300/45 background, primary-900 text."
-						category="Platform"
-						mark="BB"
-						tint="b"
-						tags={['tint-b']}
-					/>
-					<WorkCard
-						title="Tint C — Dark"
-						description="Primary-900 background, primary-100 text."
-						category="Mobile"
-						mark="CC"
-						tint="c"
-						tags={['tint-c']}
-					/>
-					<WorkCard
-						title="Tint D — Cool gray"
-						description="Grayscale-100 background, grayscale-900 text."
-						category="Dashboard"
-						mark="DD"
-						tint="d"
-						tags={['tint-d']}
+						mark="JW"
+						tags={['development', 'design']}
 					/>
 				</div>
 			</div>
