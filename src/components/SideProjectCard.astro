@@ -33,43 +33,42 @@ const {
 	target="_blank"
 	rel="noopener noreferrer"
 	class={cn(
-		'group relative flex flex-col overflow-hidden rounded-xl border pb-0 transition-colors duration-300',
+		'group relative flex flex-col justify-between overflow-hidden rounded-xl border pb-0 transition-colors duration-300',
 		'border-primary-300/45 bg-primary-100 hover:bg-primary-300/50',
 		'px-7 pt-7',
 		className
 	)}
 >
-	<!-- Head -->
-	<div class="flex items-start justify-between gap-4">
-		<div>
-			<LiveBadge />
-			<h3 class="joey_subtitle2_bold mt-2">{title}</h3>
-			<p class="joey_body1 text-typography-secondary mt-3">{description}</p>
-		</div>
-	</div>
-
-	<!-- Tags -->
-	{
-		tags.length > 0 && (
-			<div class="mt-4 flex flex-wrap gap-2">
-				{tags.map((tag) => (
-					<Tag>{tag}</Tag>
-				))}
+	<div class="flex flex-col">
+		<div class="flex items-start justify-between gap-4">
+			<div>
+				<LiveBadge />
+				<h3 class="joey_subtitle2_bold mt-2">{title}</h3>
+				<p class="joey_body1 text-typography-secondary mt-3">{description}</p>
 			</div>
-		)
-	}
+		</div>
 
-	<!-- Arrow link -->
-	<span
-		class={cn(
-			'flex items-center mt-4 gap-2 group-hover:gap-3',
-			'joey_body1_bold text-primary-700 group-hover:text-primary-900',
-			'transition-[gap,color] duration-[250ms] '
-		)}
-	>
-		{linkText}
-		<ArrowOutwardIcon class="h-4 w-4" />
-	</span>
+		{
+			tags.length > 0 && (
+				<div class="mt-4 flex flex-wrap gap-2">
+					{tags.map((tag) => (
+						<Tag>{tag}</Tag>
+					))}
+				</div>
+			)
+		}
+
+		<span
+			class={cn(
+				'flex items-center mt-4 gap-2 group-hover:gap-3',
+				'joey_body1_bold text-primary-700 group-hover:text-primary-900',
+				'transition-[gap,color] duration-[250ms] '
+			)}
+		>
+			{linkText}
+			<ArrowOutwardIcon class="h-4 w-4" />
+		</span>
+	</div>
 
 	<div class="shadow-image mt-6 aspect-(--aspect-ratio-16-9) overflow-hidden rounded-t-sm">
 		<img
