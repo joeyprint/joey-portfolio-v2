@@ -1,0 +1,105 @@
+---
+const primarySwatches = [
+	{ name: 'primary-100', val: 'hsl(37,33%,95%)', var: '--color-primary-100' },
+	{ name: 'primary-300', val: 'hsl(39,34%,77%)', var: '--color-primary-300' },
+	{ name: 'primary-500', val: 'hsl(34,33%,55%)', var: '--color-primary-500' },
+	{ name: 'primary-700', val: 'hsl(26,33%,40%)', var: '--color-primary-700' },
+	{ name: 'primary-900', val: 'hsl(18,28%,29%)', var: '--color-primary-900' }
+];
+
+const graySwatches = [
+	{ name: 'grayscale-50', val: 'hsl(210,12%,97%)', var: '--color-grayscale-50' },
+	{ name: 'grayscale-100', val: 'hsl(216,14%,93%)', var: '--color-grayscale-100' },
+	{ name: 'grayscale-200', val: 'hsl(214, 11%, 87%)', var: '--color-grayscale-200' },
+	{ name: 'grayscale-300', val: 'hsl(214,15%,85%)', var: '--color-grayscale-300' },
+	{ name: 'grayscale-400', val: 'hsl(205, 11%, 78%)', var: '--color-grayscale-400' },
+	{ name: 'grayscale-500', val: 'hsl(210,11%,71%)', var: '--color-grayscale-500' },
+	{ name: 'grayscale-600', val: 'hsl(210,11%,60%)', var: '--color-grayscale-600' },
+	{ name: 'grayscale-700', val: 'hsl(218, 9%, 53%)', var: '--color-grayscale-700' },
+	{ name: 'grayscale-800', val: 'hsl(218, 9%, 53%)', var: '--color-grayscale-800' },
+	{ name: 'grayscale-900', val: 'hsl(222,8%,40%)', var: '--color-grayscale-900' }
+];
+
+const textSwatches = [
+	{ name: 'typography-primary', val: 'hsl(240,0%,19%)', var: '--color-typography-primary' },
+	{ name: 'typography-secondary', val: 'hsl(240,4%,46%)', var: '--color-typography-secondary' }
+];
+
+const snippet = `/* src/styles/global.css — @theme block */
+--color-primary-100: hsl(37, 33%, 95%);
+--color-primary-300: hsl(39, 34%, 77%);
+--color-primary-500: hsl(34, 33%, 55%);  /* brand / primary action */
+--color-primary-700: hsl(26, 33%, 40%);  /* hover / links / eyebrow */
+--color-primary-900: hsl(18, 28%, 29%);  /* footer, dark panels */
+--color-typography-primary:   hsl(240, 0%, 19%);
+--color-typography-secondary: hsl(240, 4%, 46%);`;
+---
+
+<section id="colors" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Foundations</span>
+		<h2>Color tokens</h2>
+		<p>
+			A camel/tan primary ramp carries brand and interaction; cool grayscale handles surfaces and
+			borders. All values are CSS custom properties on <code>:root</code>.
+		</p>
+	</header>
+
+	<div class="sg-block">
+		<div class="sg-block-title">Primary ramp</div>
+		<div class="sg-swatches">
+			{
+				primarySwatches.map((sw) => (
+					<div class="sw">
+						<div class="chip-color" style={`background: var(${sw.var})`} />
+						<div class="meta">
+							<div class="name">{sw.name}</div>
+							<div class="val">{sw.val}</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+
+	<div class="sg-block">
+		<div class="sg-block-title">Grayscale</div>
+		<div class="sg-swatches">
+			{
+				graySwatches.map((sw) => (
+					<div class="sw">
+						<div class="chip-color" style={`background: var(${sw.var})`} />
+						<div class="meta">
+							<div class="name">{sw.name}</div>
+							<div class="val">{sw.val}</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+
+	<div class="sg-block">
+		<div class="sg-block-title">Text</div>
+		<div class="sg-swatches">
+			{
+				textSwatches.map((sw) => (
+					<div class="sw">
+						<div class="chip-color" style={`background: var(${sw.var})`} />
+						<div class="meta">
+							<div class="name">{sw.name}</div>
+							<div class="val">{sw.val}</div>
+						</div>
+					</div>
+				))
+			}
+		</div>
+	</div>
+
+	<div class="sg-spec sg-block">
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={snippet} /></pre>
+		</div>
+	</div>
+</section>

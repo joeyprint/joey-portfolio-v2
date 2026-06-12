@@ -1,0 +1,44 @@
+---
+import ProjectItem from '@/components/ProjectItem.astro';
+
+const snippet = `<ProjectItem name="LearnNeo" imageUrl="/assets/projects/learnneo.png">
+  <p slot="project-description" class="joey_body2 text-typography-secondary">
+    Adaptive learning platform for Thai students.
+  </p>
+</ProjectItem>
+<!-- Mobile (<md): white card, shadow-card, image on top -->
+<!-- Desktop (>=md): bg-primary-100, image anchored at bottom -->`;
+---
+
+<section id="projectitem" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Component</span>
+		<h2>Project item</h2>
+		<p>
+			Renders two layouts simultaneously: a white card with <code>shadow-card</code> on mobile (<code
+				>md:hidden</code
+			>), and a <code>bg-primary-100</code> desktop layout with the image anchored at the bottom (<code
+				>hidden md:flex</code
+			>). Use the <code>project-description</code> slot for body copy.
+		</p>
+	</header>
+	<div class="sg-spec">
+		<div class="sg-stage plain">
+			<div class="w-full">
+				<ProjectItem name="LearnNeo" imageUrl="/assets/projects/learnneo.png">
+					<p slot="project-description" class="joey_body2 text-typography-secondary">
+						Adaptive learning platform for Thai students, available on web and mobile.
+					</p>
+				</ProjectItem>
+			</div>
+		</div>
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={snippet} /></pre>
+		</div>
+	</div>
+	<p class="sg-hint">
+		The desktop layout is shown above at this viewport width. Resize below <code>768px</code> to see
+		the mobile card.
+	</p>
+</section>

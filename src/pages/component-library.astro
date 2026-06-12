@@ -1,0 +1,97 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import CLSidebar from '@/layouts/CLSidebar.astro';
+import '@/styles/component-library.css';
+import Tag from '@/components/Tag.astro';
+import CLColors from '@/containers/component-library/CLColors.astro';
+import CLTypography from '@/containers/component-library/CLTypography.astro';
+import CLRadii from '@/containers/component-library/CLRadii.astro';
+import CLMotion from '@/containers/component-library/CLMotion.astro';
+import CLButtons from '@/containers/component-library/CLButtons.astro';
+import CLTag from '@/containers/component-library/CLTag.astro';
+import CLWorkCard from '@/containers/component-library/CLWorkCard.astro';
+import CLSideCard from '@/containers/component-library/CLSideCard.astro';
+import CLProjectItem from '@/containers/component-library/CLProjectItem.astro';
+import CLAchievement from '@/containers/component-library/CLAchievement.astro';
+---
+
+<BaseLayout content={{ title: 'Component Library — Joey Wasin Portfolio' }}>
+	<div
+		class="grid min-h-[calc(100vh-var(--appbar-height))] grid-cols-[248px_1fr] max-[1080px]:grid-cols-1"
+	>
+		<CLSidebar />
+
+		<main>
+			<header class="sg-hero">
+				<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">
+					Projects page · wasin.dev
+				</span>
+				<h1 class="mt-3">Component Library</h1>
+				<p class="text-typography-secondary mt-4 max-w-[620px] text-[17px]">
+					Every building block of the Projects page, rendered live from the same CSS the page ships
+					— with variants, states, and copy-ready markup.
+				</p>
+				<div class="mt-6 flex flex-wrap gap-2">
+					<Tag>9 components</Tag>
+					<Tag>5 color ramps</Tag>
+					<Tag>1 source of truth</Tag>
+				</div>
+			</header>
+
+			<CLColors />
+			<CLTypography />
+			<CLRadii />
+			<CLMotion />
+			<CLButtons />
+			<CLTag />
+			<CLWorkCard />
+			<CLSideCard />
+			<CLProjectItem />
+			<CLAchievement />
+		</main>
+	</div>
+</BaseLayout>
+
+<script>
+	// Copy-to-clipboard
+	document.querySelectorAll<HTMLButtonElement>('.sg-copy').forEach((btn) => {
+		btn.addEventListener('click', () => {
+			const code = btn.parentElement?.querySelector('code');
+			const text = code?.textContent ?? '';
+			navigator.clipboard.writeText(text).then(
+				() => {
+					btn.textContent = 'Copied';
+					btn.classList.add('copied');
+					setTimeout(() => {
+						btn.textContent = 'Copy';
+						btn.classList.remove('copied');
+					}, 1400);
+				},
+				() => {
+					btn.textContent = 'Press ⌘C';
+				}
+			);
+		});
+	});
+
+	// Scrollspy
+	const links = Array.from(document.querySelectorAll<HTMLAnchorElement>('.cl-link'));
+	const map: Record<string, HTMLAnchorElement> = {};
+	links.forEach((a) => {
+		const id = a.getAttribute('href')?.slice(1);
+		if (id) map[id] = a;
+	});
+	const spy = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((e) => {
+				if (e.isIntersecting) {
+					links.forEach((l) => l.classList.remove('active'));
+					const a = map[e.target.id];
+					if (a) a.classList.add('active');
+				}
+			});
+		},
+		{ rootMargin: '-10% 0px -80% 0px', threshold: 0 }
+	);
+	document.querySelectorAll<HTMLElement>('.sg-section').forEach((s) => spy.observe(s));
+</script>

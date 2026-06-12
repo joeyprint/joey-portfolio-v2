@@ -1,0 +1,45 @@
+---
+import Achievement from '@/components/Achievement.astro';
+import HeartIcon from '@/components/icons/HeartIcon.astro';
+
+const achievementSnippet = `<Achievement
+  title="Software Development"
+  description="10+ years building web and mobile products."
+>
+  <HeartIcon slot="icon" />
+</Achievement>`;
+---
+
+<section id="achievement" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Component</span>
+		<h2>Achievement</h2>
+		<p>
+			Grayscale-100 card used in the "Mastery Results" grid. Pass <code>title</code> and <code
+				>description</code
+			> as props; drop a 24×24 icon into the <code>icon</code> slot.
+		</p>
+	</header>
+	<div class="sg-spec">
+		<div class="sg-stage">
+			<div class="grid w-full max-w-xl grid-cols-2 gap-4">
+				<Achievement
+					title="Software Development"
+					description="10+ years building web and mobile products end-to-end."
+				>
+					<HeartIcon slot="icon" />
+				</Achievement>
+				<Achievement
+					title="UX Design"
+					description="Research, wireframing, prototyping, and design systems."
+				>
+					<HeartIcon slot="icon" />
+				</Achievement>
+			</div>
+		</div>
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={achievementSnippet} /></pre>
+		</div>
+	</div>
+</section>

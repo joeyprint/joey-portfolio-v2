@@ -1,0 +1,56 @@
+---
+import Tag from '@/components/Tag.astro';
+import LiveBadge from '@/components/LiveBadge.astro';
+
+const tagSnippet = `<Tag>Product</Tag>
+<Tag>EdTech</Tag>
+<Tag>Web Platform</Tag>`;
+
+const badgeSnippet = `<LiveBadge />
+<LiveBadge text="Coming soon" />`;
+---
+
+<section id="tag" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Component</span>
+		<h2>Tag</h2>
+		<p>
+			Small category markers inside cards. White fill, hairline primary border — quieter than chips
+			so cards stay calm.
+		</p>
+	</header>
+	<div class="sg-spec">
+		<div class="sg-stage">
+			<Tag>Product</Tag>
+			<Tag>EdTech</Tag>
+			<Tag>Web Platform</Tag>
+			<Tag>Mobile App</Tag>
+			<Tag>Public Sector</Tag>
+		</div>
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={tagSnippet} /></pre>
+		</div>
+	</div>
+</section>
+
+<section id="livebadge" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Component</span>
+		<h2>Live badge</h2>
+		<p>
+			Signals a card that links to a working playground. The pulsing dot is the page's single
+			looping flourish. Pass <code>text</code> to override the label.
+		</p>
+	</header>
+	<div class="sg-spec">
+		<div class="sg-stage">
+			<LiveBadge />
+			<LiveBadge text="Coming soon" />
+		</div>
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={badgeSnippet} /></pre>
+		</div>
+	</div>
+</section>

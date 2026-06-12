@@ -1,0 +1,31 @@
+---
+import LiveBadge from '@/components/LiveBadge.astro';
+
+const snippet = `@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-primary-500) 55%, transparent); }
+  70%  { box-shadow: 0 0 0 9px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+.live-dot { animation: pulse 2.2s infinite; }`;
+---
+
+<section id="motion" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Foundations</span>
+		<h2>Motion</h2>
+		<p>
+			Transitions are <code>300ms</code> on color/elevation, <code>250ms</code> on the link-arrow nudge.
+			One looping accent: the live-dot pulse. All motion is disabled under
+			<code>prefers-reduced-motion</code>.
+		</p>
+	</header>
+	<div class="sg-spec">
+		<div class="sg-stage">
+			<LiveBadge />
+		</div>
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={snippet} /></pre>
+		</div>
+	</div>
+</section>

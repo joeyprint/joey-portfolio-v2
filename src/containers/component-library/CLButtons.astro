@@ -1,0 +1,72 @@
+---
+import Button from '@/components/Button.astro';
+import IconButton from '@/components/IconButton.astro';
+import DownloadOutlinedIcon from '@/components/icons/DownloadOutlinedIcon.astro';
+
+const buttonSnippet = `<Button variant="contained">Download CV</Button>
+<Button variant="outlined">View projects</Button>
+<Button variant="text">Learn more</Button>`;
+
+const iconSnippet = `<IconButton variant="contained"><DownloadOutlinedIcon /></IconButton>
+<IconButton variant="outlined"><DownloadOutlinedIcon /></IconButton>
+<IconButton variant="text"><DownloadOutlinedIcon /></IconButton>`;
+---
+
+<section id="buttons" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Component</span>
+		<h2>Buttons</h2>
+		<p>
+			Three variants. <strong>Contained</strong> for primary actions, <strong>outlined</strong> for secondary,
+			<strong>text</strong> for inline links. All deepen one ramp-step on hover and another on press.
+		</p>
+	</header>
+	<div class="sg-spec">
+		<div class="sg-stage">
+			<Button variant="contained">Download CV</Button>
+			<Button variant="outlined">View projects</Button>
+			<Button variant="text">Learn more</Button>
+		</div>
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={buttonSnippet} /></pre>
+		</div>
+	</div>
+	<p class="sg-hint">
+		States: <code>:hover</code> and <code>:active</code> are built in — hover the buttons above to preview.
+		Disabled: pass the <code>disabled</code> attribute.
+	</p>
+</section>
+
+<section id="iconbutton" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Component</span>
+		<h2>Icon button</h2>
+		<p>
+			Same variant system as <code>Button</code> but square, holding a single 24×24 icon. Always
+			<code>shadow-xs</code>.
+		</p>
+	</header>
+	<div class="sg-spec">
+		<div class="sg-stage">
+			<div class="flex items-center gap-4">
+				<div class="flex flex-col items-center gap-2">
+					<IconButton variant="contained"><DownloadOutlinedIcon /></IconButton>
+					<span class="sg-label">contained</span>
+				</div>
+				<div class="flex flex-col items-center gap-2">
+					<IconButton variant="outlined"><DownloadOutlinedIcon /></IconButton>
+					<span class="sg-label">outlined</span>
+				</div>
+				<div class="flex flex-col items-center gap-2">
+					<IconButton variant="text"><DownloadOutlinedIcon /></IconButton>
+					<span class="sg-label">text</span>
+				</div>
+			</div>
+		</div>
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={iconSnippet} /></pre>
+		</div>
+	</div>
+</section>
