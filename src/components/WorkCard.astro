@@ -8,6 +8,7 @@ interface Props extends HTMLAttributes<'article'> {
 	description: string;
 	category: string;
 	mark: string;
+	markColor?: 'primary-500' | 'primary-700' | 'primary-900';
 	tint?: 'a' | 'b' | 'c' | 'd';
 	imageUrl?: string;
 	tags?: string[];
@@ -19,6 +20,7 @@ const {
 	description,
 	category,
 	mark,
+	markColor = 'primary-900',
 	tint = 'a',
 	imageUrl,
 	tags = [],
@@ -33,43 +35,62 @@ const tintClasses: Record<string, string> = {
 	d: 'bg-grayscale-100 text-grayscale-900'
 };
 
+const markColorClasses: Record<string, string> = {
+	'primary-500': 'bg-primary-500 text-primary-100',
+	'primary-700': 'bg-primary-700 text-primary-100',
+	'primary-900': 'bg-primary-900 text-primary-100'
+};
+
 const isImageMark = mark.startsWith('/') || mark.startsWith('http');
 ---
 
 <article
 	{...restProps}
 	class={cn(
-		'flex flex-col overflow-hidden rounded-xl border border-border bg-white transition-all duration-300 hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-card',
+		'flex flex-col overflow-hidden',
+		'bg-white border rounded-xl hover:border-primary-300 hover:shadow-card',
+		'transition-all duration-300 hover:-translate-y-0.5',
 		className
 	)}
 >
-	<!-- Thumbnail -->
 	<div
 		class={cn('relative border-b border-border', 'aspect-(--aspect-ratio-16-9)', tintClasses[tint])}
 	>
 		{
-			imageUrl ? (
-				<img src={imageUrl} alt={title} class="h-full w-full object-cover object-top" />
-			) : null
+			imageUrl && (
+				<img
+					src={imageUrl}
+					alt={title}
+					class="aspect-(--aspect-ratio-16-9) h-full w-full object-cover object-top"
+				/>
+			)
 		}
 
-		<!-- Category pill -->
 		<span
-			class="text-primary-900 absolute top-3 right-3 rounded-full bg-white/80 px-[10px] py-1 text-[11px] font-bold tracking-[0.1em] uppercase backdrop-blur-sm"
+			class={cn(
+				'absolute top-3 right-3',
+				'joey_caption font-bold uppercase text-primary-900',
+				'px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-sm'
+			)}
 		>
 			{category}
 		</span>
 
 		<!-- Mark badge -->
 		<div
-			class="bg-primary-900 text-primary-100 absolute top-3 left-3 z-[2] flex h-11 w-11 items-center justify-center rounded-lg text-sm font-bold tracking-[0.02em] shadow-[0_0_0_4px_white,var(--shadow-xs)]"
+			class={cn(
+				'absolute top-3 left-3 z-2',
+				'flex items-center justify-center h-11 w-11 ',
+				'joey_body2_bold',
+				'rounded-lg shadow-[0_0_0_4px_white,var(--shadow-xs)]',
+				markColorClasses[markColor]
+			)}
 		>
 			{isImageMark ? <img src={mark} alt="" class="h-full w-full rounded-lg object-cover" /> : mark}
 		</div>
 	</div>
 
-	<!-- Body -->
-	<div class="flex flex-1 flex-col p-[22px]">
+	<div class="flex flex-1 flex-col p-6">
 		<h3 class="joey_subtitle2_bold">{title}</h3>
 		<p class="joey_body2 text-typography-secondary mt-2 flex-1">{description}</p>
 		{
