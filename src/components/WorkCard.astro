@@ -11,6 +11,7 @@ interface Props extends HTMLAttributes<'article'> {
 	markColor?: 'primary-500' | 'primary-700' | 'primary-900';
 	imageUrl?: string;
 	tags?: string[];
+	linkUrl?: string;
 	class?: string;
 }
 
@@ -22,9 +23,13 @@ const {
 	markColor = 'primary-900',
 	imageUrl,
 	tags = [],
+	linkUrl,
 	class: className,
 	...restProps
 } = Astro.props;
+
+const CardWrapper = linkUrl ? 'a' : 'article';
+const cardWrapperProps = linkUrl ? { href: linkUrl, target: '_blank' } : {};
 
 const markColorClasses: Record<string, string> = {
 	'primary-500': 'bg-primary-500 text-primary-100',
@@ -35,7 +40,8 @@ const markColorClasses: Record<string, string> = {
 const isImageMark = mark.startsWith('/') || mark.startsWith('http');
 ---
 
-<article
+<CardWrapper
+	{...cardWrapperProps}
 	{...restProps}
 	class={cn(
 		'flex flex-col overflow-hidden',
@@ -87,4 +93,4 @@ const isImageMark = mark.startsWith('/') || mark.startsWith('http');
 			)
 		}
 	</div>
-</article>
+</CardWrapper>
