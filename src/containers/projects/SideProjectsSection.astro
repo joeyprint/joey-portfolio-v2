@@ -1,6 +1,33 @@
 ---
 import Container from '@/components/Container.astro';
 import SideProjectCard from '@/components/SideProjectCard.astro';
+
+const sideProjects = [
+	{
+		title: 'Motion Mouse Movement',
+		description:
+			'Vibe code experiment: a webpage that tracks your mouse movement. Built for fun and to explore creative coding.',
+		href: 'https://labs.mouse-movement.wasin.dev/',
+		tags: ['Vibe Coding', 'Motion', 'Mouse Tracking'],
+		imageUrl: 'assets/side-projects/mouse-movement.png'
+	},
+	{
+		title: '24 Game Solver',
+		description:
+			'A math puzzle game where you combine them using arithmetic operations to reach the target number 24.',
+		href: 'https://24game.wasin.dev/',
+		tags: ['Vibe Coding', 'Game', 'Mathematics'],
+		imageUrl: 'assets/side-projects/24-game.png'
+	},
+	{
+		title: 'Barcode Generator Website',
+		description:
+			'A fast, browser-based tool to generate and download barcodes — pick a symbology, type your value, export. Built to scratch my own itch.',
+		href: 'https://labs.generate-barcode.wasin.dev/',
+		tags: ['Web Tools', 'Barcode'],
+		imageUrl: 'assets/side-projects/generate-barcode.png'
+	}
+];
 ---
 
 <section id="side-projects" class="bg-grayscale-50 py-16">
@@ -13,13 +40,7 @@ import SideProjectCard from '@/components/SideProjectCard.astro';
 			</p>
 		</div>
 		<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-			<SideProjectCard
-				title="Barcode Generator Website"
-				description="A fast, browser-based tool to generate and download barcodes — pick a symbology, type your value, export. Built to scratch my own itch."
-				href="https://labs.generate-barcode.wasin.dev/"
-				tags={['Side project', 'Web tool', 'Barcodes']}
-				imageUrl="assets/side-projects/generate-barcode.png"
-			/>
+			{sideProjects.length > 0 && sideProjects.map((project) => <SideProjectCard {...project} />)}
 		</div>
 	</Container>
 </section>
