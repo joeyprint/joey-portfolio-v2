@@ -61,9 +61,8 @@ const cardWrapperProps = linkUrl ? { href: linkUrl, target: '_blank' } : {};
 				<div
 					class={cn(
 						'absolute top-3 left-3 z-2',
-						'flex h-11 w-11 items-center justify-center',
-						'joey_body2_bold',
-						'rounded-lg shadow-[0_0_0_4px_white,var(--shadow-xs)]'
+						'h-11 w-11',
+						'rounded-lg shadow-[0,0,0,4px,white,var(--shadow-xs)]'
 					)}
 				>
 					<img src={mark} class="h-full w-full rounded-lg object-cover" />
@@ -74,7 +73,7 @@ const cardWrapperProps = linkUrl ? { href: linkUrl, target: '_blank' } : {};
 
 	<div class="flex flex-1 flex-col p-6">
 		<h3 class="joey_subtitle2_bold">{title}</h3>
-		<p class="joey_body2 text-typography-secondary mt-2 flex-1">{description}</p>
+		<p class="joey_body1 text-typography-secondary mt-2 flex-1">{description}</p>
 		{
 			tags.length > 0 && (
 				<div class="mt-4 flex flex-wrap gap-2">
