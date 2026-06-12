@@ -2,13 +2,8 @@
 import Container from '@/components/Container.astro';
 import WorkCard from '@/components/WorkCard.astro';
 import type { ComponentProps } from 'astro/types';
-import { getDeviceOS } from '@/lib/devices';
 
 type WorkProject = ComponentProps<typeof WorkCard> & { title: string };
-
-const os = getDeviceOS();
-const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.skooldio.tcaster&hl=en';
-const appStoreUrl = 'https://apps.apple.com/th/app/tcaster/id1267234768?l=th';
 
 const workProjects: WorkProject[] = [
 	{
@@ -41,7 +36,7 @@ const workProjects: WorkProject[] = [
 		mark: 'TC',
 		markColor: 'primary-700',
 		tags: ['Development', 'iOS', 'Android'],
-		linkUrl: os === 'Android' || os === 'Windows' ? playStoreUrl : appStoreUrl
+		linkUrl: 'https://apps.apple.com/th/app/tcaster/id1267234768?l=th'
 	},
 	{
 		title: 'TCASter ExamHub',
@@ -130,3 +125,18 @@ const workProjects: WorkProject[] = [
 		</div>
 	</Container>
 </section>
+
+<script>
+	import { getDeviceOS } from '@/lib/devices';
+
+	const os = getDeviceOS();
+	const playStoreUrl = 'https://play.google.com/store/apps/details?id=com.skooldio.tcaster&hl=en';
+	const appStoreUrl = 'https://apps.apple.com/th/app/tcaster/id1267234768?l=th';
+
+	if (os === 'Android' || os === 'Windows') {
+		const tcasterLink = document.querySelector<HTMLAnchorElement>(`a[href="${appStoreUrl}"]`);
+		if (tcasterLink) {
+			tcasterLink.href = playStoreUrl;
+		}
+	}
+</script>
