@@ -1,0 +1,45 @@
+---
+import Container from '@/components/Container.astro';
+import WorkCard from '@/components/WorkCard.astro';
+import type { ComponentProps } from 'astro/types';
+
+type ActivityItem = ComponentProps<typeof WorkCard> & { title: string };
+
+const activities: ActivityItem[] = [
+	{
+		title: 'LINE Hack 2025',
+		description:
+			'Create a solution to fix simple problem that “What do we eat today?” with LINE Mini App. To help everyone to reduce time for discussion about location and restaurant near by with Gemini',
+		imageUrl: 'assets/activities/line-hack-2025.png',
+		category: 'Hackathon',
+		mark: 'assets/activities/icons/line-developer-icon.jpg',
+		tags: ['LINE Hack', 'Mini App', 'Design Flow'],
+		linkUrl: 'https://medium.com/@joeywasin/line-hackathon-2025-joeys-experience-4fe46b91f49a'
+	},
+	{
+		title: 'UX Thailand Conference 2024',
+		description:
+			'The largest UX design conference in Thailand — bringing the community together to learn and connect.',
+		imageUrl: 'assets/activities/uxthailand.png',
+		category: 'Conference',
+		mark: 'assets/activities/icons/uxth-icon.png',
+		tags: ['Organizer', 'Community', 'Conference'],
+		linkUrl: 'https://www.facebook.com/groups/uxthailand'
+	}
+];
+---
+
+<section id="activities" class="py-16">
+	<Container>
+		<div>
+			<p class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Beyond the screen</p>
+			<h2 class="joey_heading2 mt-1.5">Activities</h2>
+			<p class="joey_body1 text-typography-secondary mt-2.5">
+				Community events and conferences I've taken part in.
+			</p>
+		</div>
+		<div class="mt-10 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+			{activities.map((project) => <WorkCard {...project} />)}
+		</div>
+	</Container>
+</section>

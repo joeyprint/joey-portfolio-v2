@@ -1,0 +1,88 @@
+---
+import { cn } from '@/lib/utils';
+import Tag from '@/components/Tag.astro';
+import type { HTMLAttributes } from 'astro/types';
+
+interface Props extends HTMLAttributes<'article'> {
+	title: string;
+	description: string;
+	category: string;
+	mark?: string;
+	imageUrl?: string;
+	tags?: string[];
+	linkUrl?: string;
+	class?: string;
+}
+
+const {
+	title,
+	description,
+	category,
+	mark,
+	imageUrl,
+	tags = [],
+	linkUrl,
+	class: className,
+	...restProps
+} = Astro.props;
+
+const CardWrapper = linkUrl ? 'a' : 'article';
+const cardWrapperProps = linkUrl ? { href: linkUrl, target: '_blank' } : {};
+---
+
+<CardWrapper
+	{...cardWrapperProps}
+	{...restProps}
+	class={cn(
+		'flex flex-col overflow-hidden',
+		'bg-white border rounded-xl hover:border-primary-300 hover:shadow-card',
+		'transition-all duration-300 hover:-translate-y-0.5',
+		className
+	)}
+>
+	<div class={cn('relative border-b border-border', 'aspect-(--aspect-ratio-16-9)')}>
+		<img
+			src={imageUrl ?? 'assets/projects/default-project-image.png'}
+			alt={title}
+			class="aspect-(--aspect-ratio-16-9) h-full w-full object-cover object-top"
+		/>
+		<span
+			class={cn(
+				'absolute top-3 right-3',
+				'joey_caption font-bold uppercase text-primary-900',
+				'px-2.5 py-1 rounded-full bg-white/80 backdrop-blur-sm'
+			)}
+		>
+			{category}
+		</span>
+
+		{
+			mark && (
+				<div
+					class={cn(
+						'absolute top-3 left-3 z-2',
+						'flex h-11 w-11 items-center justify-center',
+						'joey_body2_bold',
+						'rounded-lg shadow-[0_0_0_4px_white,var(--shadow-xs)]'
+					)}
+				>
+					<img src={mark} class="h-full w-full rounded-lg object-cover" />
+				</div>
+			)
+		}
+	</div>
+
+	<div class="flex flex-1 flex-col p-6">
+		<h3 class="joey_subtitle2_bold">{title}</h3>
+		<p class="joey_body2 text-typography-secondary mt-2 flex-1">{description}</p>
+		{
+			tags.length > 0 && (
+				<div class="mt-4 flex flex-wrap gap-2">
+					{tags.map((tag) => (
+						<Tag>{tag}</Tag>
+					))}
+				</div>
+			)
+		}
+	</div>
+</CardWrapper>

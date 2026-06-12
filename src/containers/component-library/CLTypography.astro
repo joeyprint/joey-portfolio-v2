@@ -1,0 +1,58 @@
+---
+const typeRows = [
+	{ label: '.joey_quote · 48/700', cls: 'joey_quote', demo: 'Projects' },
+	{ label: '.joey_heading1 · 36/700', cls: 'joey_heading1', demo: 'Page Heading' },
+	{ label: '.joey_heading2 · 32/700', cls: 'joey_heading2', demo: 'Section Title' },
+	{ label: '.joey_heading3 · 28/700', cls: 'joey_heading3', demo: 'Sub-section Title' },
+	{ label: '.joey_subtitle1 · 24/400', cls: 'joey_subtitle1', demo: 'Hero subtitle text.' },
+	{ label: '.joey_subtitle2_bold · 20/700', cls: 'joey_subtitle2_bold', demo: 'Card Title' },
+	{ label: '.joey_body1 · 16/400', cls: 'joey_body1', demo: 'Default body copy, links.' },
+	{ label: '.joey_body1_bold · 16/700', cls: 'joey_body1_bold', demo: 'Emphasized body text.' },
+	{ label: '.joey_body2 · 14/400', cls: 'joey_body2', demo: 'Small body copy.' },
+	{
+		label: '.joey_body2_bold · 14/700 caps',
+		cls: 'joey_body2_bold uppercase tracking-[0.18em] text-primary-700',
+		demo: 'Eyebrow Label'
+	},
+	{
+		label: '.joey_caption · 12/400',
+		cls: 'joey_caption text-typography-secondary',
+		demo: '© 2026 · Wasin Wachirapusitanun'
+	}
+];
+
+const snippet = `<h1 class="joey_heading1">Page Heading</h1>
+<p class="joey_body2_bold uppercase tracking-[0.18em] text-primary-700">Eyebrow</p>
+<h2 class="joey_heading2">Section Title</h2>
+<p class="joey_body1 text-typography-secondary">Body copy.</p>`;
+---
+
+<section id="type" class="sg-section">
+	<header>
+		<span class="joey_body2_bold text-primary-700 tracking-[0.18em] uppercase">Foundations</span>
+		<h2>Typography</h2>
+		<p>
+			One family — <strong>Mulish</strong> — across the whole page. Use the <code>.joey_*</code> composite
+			classes for text styling; they bundle size + weight + line-height.
+		</p>
+	</header>
+
+	<div class="sg-spec">
+		<div class="sg-stage col plain" style="gap:0">
+			{
+				typeRows.map((row) => (
+					<div class="sg-type-row">
+						<span class="label">{row.label}</span>
+						<div class="demo">
+							<span class={row.cls}>{row.demo}</span>
+						</div>
+					</div>
+				))
+			}
+		</div>
+		<div class="sg-code">
+			<button class="sg-copy" type="button">Copy</button>
+			<pre><code set:text={snippet} /></pre>
+		</div>
+	</div>
+</section>
