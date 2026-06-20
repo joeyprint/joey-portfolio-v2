@@ -1,0 +1,30 @@
+# Joey Wasin — Wasin Wachirapusitanun
+
+> Software Engineer & UX Product based in Thailand
+
+## About
+
+Joey is a software developer with 6+ years of experience (since December 2019) specializing in scalable front-end engineering and UX/UI product design. He bridges the gap between design and engineering — taking products from MVP to scale.
+
+## Skills & Expertise
+
+- **Software Development**: Building scalable web and mobile applications, translating business requirements into technical solutions
+- **Team Leadership**: Cross-functional coordination, managed teams of ~30 people
+- **Product Management**: Unblocking dependencies, aligning stakeholders, defining roadmaps
+- **UX Facilitation**: Design-to-code bridging, upskilled 30+ persons, workshop facilitation
+
+## Available For
+
+Senior software engineering roles or strategic consulting engagements.
+
+## Contact
+
+- Email: wasin.ww1402@gmail.com
+- Website: https://www.wasin.dev
+- LinkedIn: https://www.linkedin.com/in/joeywasin/
+- GitHub: https://github.com/joeyprint
+
+## Pages
+
+- [Homepage](https://www.wasin.dev/): Profile overview, skills, featured projects, and contact
+- [Projects](https://www.wasin.dev/projects): Full project portfolio including web apps, mobile products, side projects, and activities
