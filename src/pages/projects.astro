@@ -6,7 +6,14 @@ import SideProjectsSection from '@/containers/projects/SideProjectsSection.astro
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-<BaseLayout content={{ title: 'Wasin Wachirapusitanun | Portfolio | Projects' }}>
+<BaseLayout
+	content={{
+		title: 'Projects | Wasin Wachirapusitanun',
+		description:
+			"Joey Wasin's project portfolio — web apps, mobile products, and open-source work built over 6+ years of software engineering.",
+		canonicalURL: 'https://www.wasin.dev/projects'
+	}}
+>
 	<ProjectsHero />
 	<ProjectList />
 	<SideProjectsSection />

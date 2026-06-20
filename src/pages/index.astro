@@ -8,7 +8,14 @@ import QuoteSection from '@/containers/homepage/QuoteSection.astro';
 import BaseLayout from '@/layouts/BaseLayout.astro';
 ---
 
-<BaseLayout content={{ title: 'Wasin Wachirapusitanun | Portfolio' }}>
+<BaseLayout
+	content={{
+		title: 'Wasin Wachirapusitanun | Portfolio',
+		description:
+			'Software Engineer & UX Product building scalable web and mobile apps. I live by these words in everything we develop and every story we tell.',
+		canonicalURL: 'https://www.wasin.dev/'
+	}}
+>
 	<HeroBanner />
 	<CompanyList />
 	<Achievements />
