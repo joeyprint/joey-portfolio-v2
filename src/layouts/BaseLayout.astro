@@ -7,6 +7,11 @@ import Footer from './Footer.astro';
 import '../styles/global.css';
 
 const { content } = Astro.props;
+
+const siteUrl = 'https://www.wasin.dev';
+const defaultOgImage = `${siteUrl}/assets/profile/thumbnail.jpg`;
+const canonicalURL = content.canonicalURL ?? siteUrl;
+const ogImage = content.ogImage ?? defaultOgImage;
 ---
 
 <html lang="en">
@@ -43,16 +48,41 @@ const { content } = Astro.props;
 		<link rel="manifest" href="/favicon/site.webmanifest" />
 
 		<title>{content.title}</title>
+		<meta name="description" content={content.description} />
+		<link rel="canonical" href={canonicalURL} />
 
 		<!-- Open Graph -->
-		<meta property="”og:title”" content="Wasin Wachirapusitanun" />
-		<meta
-			property="og:description"
-			content="I'm a software developer from Thailand. We live by these words in everything we develop and every story we tell. The web and applications mustn't be useless for an organization."
-		/>
-		<meta property="og:image" content="https://www.wasin.dev/assets/profile/thumbnail.jpg" />
-		<meta property="”og:image:width”" content="1200" />
-		<meta property="”og:image:height”" content="630" />
+		<meta property="og:title" content={content.title} />
+		<meta property="og:description" content={content.description} />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:type" content="website" />
+		<meta property="og:site_name" content="Wasin Wachirapusitanun" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={content.title} />
+		<meta name="twitter:description" content={content.description} />
+		<meta name="twitter:image" content={ogImage} />
+
+		<!-- JSON-LD Person schema -->
+		<script type="application/ld+json">
+			{
+				"@context": "https://schema.org",
+				"@type": "Person",
+				"name": "Wasin Wachirapusitanun",
+				"alternateName": "Joey Wasin",
+				"url": "https://www.wasin.dev",
+				"jobTitle": "Software Engineer & UX Product",
+				"email": "wasin.ww1402@gmail.com",
+				"sameAs": [
+					"https://www.linkedin.com/in/joeywasin/",
+					"https://github.com/joeyprint"
+				]
+			}
+		</script>
 	</head>
 	<body>
 		<Appbar />

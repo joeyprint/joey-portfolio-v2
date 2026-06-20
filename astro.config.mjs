@@ -4,9 +4,11 @@ import tailwindcss from '@tailwindcss/vite';
 import path from 'path';
 
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+	site: 'https://www.wasin.dev',
 	vite: {
 		plugins: [tailwindcss()],
 		server: {
@@ -21,5 +23,10 @@ export default defineConfig({
 		}
 	},
 
-	integrations: [react()]
+	integrations: [
+		react(),
+		sitemap({
+			filter: (page) => !page.includes('/component-library')
+		})
+	]
 });
